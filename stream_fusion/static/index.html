@@ -10,7 +10,7 @@
     <script>
         const secretKey = "{{ session_key }}";
     </script>
-    <title>SteamFusion</title>
+    <title>razeNio</title>
     <style>
         .multipleSelection {
             width: 150px;
@@ -39,10 +39,10 @@
                 <img src="/static/logo-stream-fusion.png" alt="logo" class="w-[150px] h-[150px]">
             </div>
             <div class="space-y-6">
-                <p class="dark:text-white text-center">FRENCH Optimized - Stremio Addon</p>
+                <p class="dark:text-white text-center">Addon Stremio - Optimisé pour le contenu Français !</p>
                 <h1 class="text-base font-semibold leading-7 text-gray-900 dark:text-white"
                     style="text-align: center;font-size: 1.3rem;">
-                    Stream-Fusion</h1>
+                    razeNio</h1>
                     <div class="border-b border-gray-900/10 dark:border-white/50 pb-12">
                         <div class="mt-10 flex justify-center">
                             <div class="w-full max-w-md">
@@ -59,9 +59,8 @@
 
                 <div class="border-b border-gray-900/10 dark:border-white/50 pb-12">
                     <div class="flex flex-col items-center">
-                        <h2 class="text-white font-semibold leading-7">Streaming Settings</h2>
-                        <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-400">Configure your streaming
-                            preferences here.</p>
+                        <h2 class="text-white font-semibold leading-7">Paramètres Débrideurs</h2>
+                        <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-400">Configurez votre débrideur ici.</p>
                     </div>
 
                     <div class="mt-10 space-y-10">
@@ -73,8 +72,8 @@
                                     onchange="updateProviderFields(true)">
                             </div>
                             <div class="text-sm leading-6">
-                                <label for="debrid_rd" class="font-medium text-white">Enable Real-Debrid Service</label>
-                                <p class="text-gray-500 dark:text-gray-300">Activate Real-Débrid service for streaming.
+                                <label for="debrid_rd" class="font-medium text-white">Utiliser Real-Debrid</label>
+                                <p class="text-gray-500 dark:text-gray-300">Cochez pour utiliser Real-Debrid comme service de stream.
                                 </p>
                             </div>
                         </div>
@@ -87,8 +86,8 @@
                                     onchange="updateProviderFields(true)">
                             </div>
                             <div class="text-sm leading-6">
-                                <label for="debrid_ad" class="font-medium text-white">Enable AllDebrid Service</label>
-                                <p class="text-gray-500 dark:text-gray-300">Activate AllDebrid service for streaming.
+                                <label for="debrid_ad" class="font-medium text-white">Utiliser AllDebrid</label>
+                                <p class="text-gray-500 dark:text-gray-300">Cochez pour utiliser AllDebrid comme service de stream.
                                 </p>
                             </div>
                         </div>
@@ -101,8 +100,8 @@
                                     onchange="updateProviderFields(true)">
                             </div>
                             <div class="text-sm leading-6">
-                                <label for="debrid_pm" class="font-medium text-white">Enable Premiumize Service</label>
-                                <p class="text-gray-500 dark:text-gray-300">Activate Premiumize service for streaming.</p>
+                                <label for="debrid_pm" class="font-medium text-white">Utiliser Premiumize</label>
+                                <p class="text-gray-500 dark:text-gray-300">Cochez pour utiliser Premiumize comme service de stream.</p>
                             </div>
                         </div>
 
@@ -114,8 +113,8 @@
                                     onchange="updateProviderFields(true)">
                             </div>
                             <div class="text-sm leading-6">
-                                <label for="debrid_tb" class="font-medium text-white">Enable TorBox Service</label>
-                                <p class="text-gray-500 dark:text-gray-300">Activate TorBox service for streaming.
+                                <label for="debrid_tb" class="font-medium text-white">Utiliser TorBox</label>
+                                <p class="text-gray-500 dark:text-gray-300">Cochez pour utiliser TorBox comme service de stream.
                                 </p>
                             </div>
                         </div>
@@ -126,10 +125,9 @@
                                     class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                             </div>
                             <div class="text-sm leading-6">
-                                <label for="torrenting" class="font-medium text-white">Enable Torrenting</label>
+                                <label for="torrenting" class="font-medium text-white">Activer le Torrenting</label>
                                 <p class="text-gray-500 dark:text-gray-300"><span
-                                        class="font-bold text-red-600 dark:text-red-500">Warning: This may be illegal in
-                                        some countries. Use at your own risk.</span></p>
+                                        class="font-bold text-red-600 dark:text-red-500">Attention: Ceci est illégal en France, utilisez à votre propre risque.</span></p>
                             </div>
                         </div>
                     </div>
@@ -137,9 +135,8 @@
 
                 <div class="border-b border-gray-900/10 dark:border-white/50 pb-12">
                     <div class="flex flex-col items-center">
-                        <h2 class="text-white font-semibold leading-7">Torrent Providers</h2>
-                        <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-400">Configure your torrent provider
-                            settings here.</p>
+                        <h2 class="text-white font-semibold leading-7">Fournisseurs de torrents</h2>
+                        <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-400">Configurez les paramètres de votre fournisseur de torrent ici.</p>
                     </div>
 
                     <div class="mt-10 space-y-10">
@@ -164,27 +161,13 @@
                                     onchange="updateProviderFields(true)">
                             </div>
                             <div class="text-sm leading-6">
-                                <label for="cache" class="font-medium text-white">Enable Public Caching</label>
-                                <p class="text-gray-500 dark:text-gray-300">Activate public caching for faster search
-                                    results.</p>
+                                <label for="cache" class="font-medium text-white">Activer le Cache Public</label>
+                                <p class="text-gray-500 dark:text-gray-300">Activez la mise en cache publique pour des résultats de recherche plus rapides.</p>
                                 <p class="text-gray-500 dark:text-gray-300"><span
-                                        class="font-bold text-red-600 dark:text-red-500">The cache server are the
-                                        historical one from
-                                        stremio-jackett app, only public torrent are cached on it</span></p>
+                                        class="font-bold text-red-600 dark:text-red-500">Le serveur de cache est celui historique de l'application stremio-jackett ; seuls les torrents publics y sont mis en cache.</span></p>
                             </div>
                         </div>
 
-                        <div class="relative flex gap-x-3">
-                            <div class="flex h-6 items-center">
-                                <input id="zilean" name="zilean" type="checkbox" checked
-                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                            </div>
-                            <div class="text-sm leading-6">
-                                <label for="zilean" class="font-medium text-white">Enable Zilean API</label>
-                                <p class="text-gray-500 dark:text-gray-300">Use Zilean's API for DMM hashlist scraping
-                                    to find more results.</p>
-                            </div>
-                        </div>
 
                         <div class="relative flex gap-x-3">
                             <div class="flex h-6 items-center">
@@ -194,9 +177,8 @@
                                     onchange="updateProviderFields(true)">
                             </div>
                             <div class="text-sm leading-6">
-                                <label for="yggflix" class="font-medium text-white">Enable YggTorrent API</label>
-                                <p class="text-gray-500 dark:text-gray-300">Use Yggtorrent API and internal cf bypass
-                                    to find more results.</p>
+                                <label for="yggflix" class="font-medium text-white">Activer l'API YggTorrent</label>
+                                <p class="text-gray-500 dark:text-gray-300">Utilisez l'API Yggtorrent pour trouver plus de résultats.</p>
                             </div>
                         </div>
 
@@ -208,13 +190,10 @@
                                     onchange="updateProviderFields(true)">
                             </div>
                             <div class="text-sm leading-6">
-                                <label for="sharewood" class="font-medium text-white">Enable Sharewood API</label>
-                                <p class="text-gray-500 dark:text-gray-300">Use Sharewood API
-                                    to find more results.</p>
+                                <label for="sharewood" class="font-medium text-white">Activer l'API Sharewood</label>
+                                <p class="text-gray-500 dark:text-gray-300">Utilisez l'API Sharewood pour trouver plus de résultats.</p>
                                 <p class="text-gray-500 dark:text-gray-300"><span
-                                        class="font-bold text-red-600 dark:text-red-500">Warning: The Sharewood API are
-                                        not stable and very limited,
-                                        you may prefere to disable it to save time on search</span></p>
+                                        class="font-bold text-red-600 dark:text-red-500">Attention : l'API Sharewood n'est pas stable et très limitée. Vous pouvez la désactiver pour gagner du temps lors de vos recherches.</span></p>
                             </div>
                         </div>
                     </div>
@@ -222,212 +201,8 @@
 
                 <div class="border-b border-gray-900/10 dark:border-white/50 pb-12">
                     <div class="flex flex-col items-center">
-                        <h2 class="text-white font-semibold leading-7">Debrid Custom Config</h2>
-                        <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-400">Customize your debrid service
-                            settings here.</p>
-                    </div>
-
-                    <div class="mt-10 space-y-10">
-                        <div class="relative flex gap-x-3">
-                            <div class="flex h-6 items-center">
-                                <input id="debrid_order" name="debrid_order" type="checkbox"
-                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                                    onchange="toggleDebridOrderList()">
-                            </div>
-                            <div class="text-sm leading-6">
-                                <label for="debrid_order" class="font-medium text-white">Customize Debrid Service
-                                    Order</label>
-                                <p class="text-gray-500 dark:text-gray-300">
-                                    Set the priority order for streaming services. The cache of each debrid service will
-                                    be checked in this order.
-                                </p>
-                                <ul id="debridOrderList" class="mt-4 space-y-2 hidden">
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="relative flex flex-col gap-y-3">
-                            <div class="text-sm leading-6">
-                                <label class="font-medium text-white">Debrid Service Downloader</label>
-                                <p class="text-gray-500 dark:text-gray-300">
-                                    Select which debrid service to use for downloading torrents.
-                                </p>
-                            </div>
-                            <div id="debridDownloaderOptions" class="mt-2 space-y-2">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {% if not rd_unique_account %}
-                <div id="rd_debrid-fields" style="display: none;">
-                    <div class="border-b border-gray-900/10 dark:border-white/50 pb-12">
-                        <div class="flex flex-col items-center">
-                            <h2 class="text-white font-semibold leading-7">Real-Debrid Configuration</h2>
-                        </div>
-                        <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-                            <div class="sm:col-span-3">
-                                <button id="rd-auth-button" onclick="startRealDebridAuth()"
-                                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                                    S'authentifier avec Real-Debrid
-                                </button>
-                                <div id="auth-instructions" class="mt-2 text-sm text-gray-600 dark:text-gray-400"
-                                    style="display: none;">
-                                    Veuillez vous rendre sur <a id="verification-url"
-                                        class="text-blue-500 hover:underline" target="_blank"></a>
-                                    : Votre user code est : <span id="user-code"></span>
-                                </div>
-                                <div id="auth-status" class="mt-2 text-sm text-green-600 dark:text-green-400"
-                                    style="display: none;">
-                                    Authentification réussie !
-                                </div>
-                            </div>
-                            <div class="sm:col-span-3">
-                                <textarea id="rd_token_info" rows="4"
-                                    class="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                    readonly></textarea>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {% endif %}
-
-                {% if not ad_unique_account %}
-                <div id="ad_debrid-fields" style="display: none;">
-                    <div class="border-b border-gray-900/10 dark:border-white/50 pb-12">
-                        <div class="flex flex-col items-center">
-                            <h2 class="text-white font-semibold leading-7">AllDebrid Configuration</h2>
-                        </div>
-                        <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-                            <div class="sm:col-span-3">
-                                <button id="ad-auth-button" onclick="startADAuth()"
-                                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                                    S'authentifier avec AllDebrid
-                                </button>
-                                <div id="ad-auth-instructions" class="mt-2 text-sm text-gray-600 dark:text-gray-400"
-                                    style="display: none;">
-                                    Veuillez entrer ce code PIN sur le site AllDebrid : <span
-                                        id="ad-user-code"></span><br>
-                                    Visitez <a id="ad-verification-url" class="text-blue-500 hover:underline"
-                                        target="_blank"></a>
-                                </div>
-                                <div id="ad-auth-status" class="mt-2 text-sm text-green-600 dark:text-green-400"
-                                    style="display: none;">
-                                    Authentification réussie !
-                                </div>
-                            </div>
-                            <div class="sm:col-span-3">
-                                <textarea id="ad_token_info" rows="2"
-                                    class="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 p-2"
-                                    readonly></textarea>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {% endif %}
-
-                {% if not tb_unique_account %}
-                <div id="tb_debrid-fields" style="display: none;">
-                    <div class="border-b border-gray-900/10 dark:border-white/50 pb-12">
-                        <div class="flex flex-col items-center">
-                            <h2 class="text-white font-semibold leading-7">Torbox Configuration</h2>
-                        </div>
-                        <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-                            <div class="sm:col-span-4">
-                                <label for="tb_token_info" class="block text-sm font-medium leading-6 text-white">Torbox
-                                    Token</label>
-                                <input type="text" name="tb_token_info" id="tb_token_info"
-                                    class="mt-2 block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                            </div>
-                        </div>
-                        <div class="mt-6 space-y-6">
-                            <div class="relative flex gap-x-3">
-                                <div class="flex h-6 items-center">
-                                    <input id="tb_usenet" name="tb_usenet" type="checkbox"
-                                        class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                                </div>
-                                <div class="text-sm leading-6">
-                                    <label for="tb_usenet" class="font-medium text-white">Use Usenets</label>
-                                    <p class="text-gray-500 dark:text-gray-300">Enable usenet search and usenets
-                                        download functionality.</p>
-                                </div>
-                            </div>
-                            <div class="relative flex gap-x-3">
-                                <div class="flex h-6 items-center">
-                                    <input id="tb_search" name="tb_search" type="checkbox"
-                                        class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                                </div>
-                                <div class="text-sm leading-6">
-                                    <label for="tb_search" class="font-medium text-white">Use TorBox Public Torrent
-                                        Search Engine</label>
-                                    <p class="text-gray-500 dark:text-gray-300">Enable public torrent search
-                                        functionality.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {% endif %}
-
-                {% if not pm_unique_account %}
-                <div id="pm_debrid-fields" style="display: none;">
-                    <div class="border-b border-gray-900/10 dark:border-white/50 pb-12">
-                        <div class="flex flex-col items-center">
-                            <h2 class="text-white font-semibold leading-7">Premiumize Configuration</h2>
-                        </div>
-                        <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-                            <div class="col-span-full">
-                                <label for="pm_token_info" class="block text-sm font-medium leading-6 text-white">Premiumize Token</label>
-                                <div class="mt-2">
-                                    <input type="text" name="pm_token_info" id="pm_token_info"
-                                        class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {% endif %}
-
-                <div class="border-b border-gray-900/10 dark:border-white/50 pb-12">
-                    <div class="flex flex-col items-center">
-                        <h2 class="text-white font-semibold leading-7">Catalogs Providers</h2>
-                        <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-400">Configure your catalogs
-                            preferences here.</p>
-                    </div>
-
-                    <div class="mt-10 space-y-10">
-                        <div class="relative flex gap-x-3">
-                            <div class="flex h-6 items-center">
-                                <input id="ctg_yggflix" name="ctg_yggflix" type="checkbox"
-                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                            </div>
-                            <div class="text-sm leading-6">
-                                <label for="ctg_yggflix" class="font-medium text-white">Enable Yggflix Catalogs</label>
-                                <p class="text-gray-500 dark:text-gray-300">Activate yggflix catalogs for discovers
-                                    contents.</p>
-                            </div>
-                        </div>
-
-                        <div class="relative flex gap-x-3">
-                            <div class="flex h-6 items-center">
-                                <input id="ctg_yggtorrent" name="ctg_yggtorrent" type="checkbox"
-                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                            </div>
-                            <div class="text-sm leading-6">
-                                <label for="ctg_yggtorrent" class="font-medium text-white">Enable Yggtorrent
-                                    Catalogs</label>
-                                <p class="text-gray-500 dark:text-gray-300">Activate yggtorrent catalogs for discovers
-                                    contents.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="border-b border-gray-900/10 dark:border-white/50 pb-12">
-                    <div class="flex flex-col items-center">
-                        <h2 class="text-white font-semibold leading-7">Metadata Provider</h2>
-                        <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-400">Configure your metadata provider
-                            settings here.</p>
+                        <h2 class="text-white font-semibold leading-7">Fournisseur de métadonnées</h2>
+                        <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-400">Configurez ici les paramètres de votre fournisseur de métadonnées.</p>
                     </div>
                     <div class="mt-10 space-y-10">
                         <div class="relative flex gap-x-3">
@@ -436,9 +211,8 @@
                                     class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                             </div>
                             <div class="text-sm leading-6">
-                                <label for="tmdb" class="font-medium text-white">Use TMDB</label>
-                                <p class="text-gray-500 dark:text-gray-300">Use TMDB for more accurate metadata in
-                                    different languages.</p>
+                                <label for="tmdb" class="font-medium text-white">Utiliser TMDB (recommandé)</label>
+                                <p class="text-gray-500 dark:text-gray-300">Utilisez TMDB pour des métadonnées plus précises en Français.</p>
                             </div>
                         </div>
 
@@ -448,32 +222,13 @@
                                     class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                             </div>
                             <div class="text-sm leading-6">
-                                <label for="cinemeta" class="font-medium text-white">Use Cinemeta</label>
-                                <p class="text-gray-500 dark:text-gray-300">Use Cinemeta for simple metadata.</p>
+                                <label for="cinemeta" class="font-medium text-white">Utiliser Cinemeta</label>
+                                <p class="text-gray-500 dark:text-gray-300">Utilisez Cinemeta pour des métadonnées simples.</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div id="cache-fields" style="display: none;">
-                    <div class="border-b border-gray-900/10 dark:border-white/50 pb-12">
-                        <div class="flex flex-col items-center">
-                            <h2 class="text-white font-semibold leading-7">Public Cache Configuration</h2>
-                            <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-400">Enter your Public Cache URL
-                                information here.</p>
-                        </div>
-                        <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-                            <div class="sm:col-span-4">
-                                <label for="cacheUrl"
-                                    class="block text-sm font-medium leading-6 text-white text-white">Public Cache
-                                    URL</label>
-                                <input type="text" name="cacheUrl" id="cacheUrl"
-                                    value="https://stremio-jackett-cacher.elfhosted.com/"
-                                    class="mt-2 block w-full rounded-md border-0 py-1.5 px-3 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
                 {% if not sharewood_unique_account %}
                 <div id="sharewood-fields" style="display: none;">
@@ -517,13 +272,12 @@
 
                 <div class="border-b border-gray-900/10 dark:border-white/50 pb-12">
                     <div class="flex flex-col items-center">
-                        <h2 class="text-white font-semibold leading-7">Filtering and Sorting</h2>
-                        <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-400">Set up your filtering parameters
-                            and sorting preferences here.</p>
+                        <h2 class="text-white font-semibold leading-7">Filtrage et tri</h2>
+                        <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-400">Configurez ici vos paramètres de filtrage et vos préférences de tri.</p>
                     </div>
                     <div class="mt-10 space-y-10">
                         <fieldset>
-                            <legend class="text-sm font-semibold leading-6 text-white">Sorting Options</legend>
+                            <legend class="text-sm font-semibold leading-6 text-white">Options de tri</legend>
                             <div class="mt-6 space-y-6">
                                 <div class="flex items-center gap-x-3">
                                     <input id="quality" name="sorting" type="radio"
