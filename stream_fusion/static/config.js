@@ -215,7 +215,7 @@ function resetADAuthButton() {
 }
 
 function handleUniqueAccounts() {
-    const accounts = ['debrid_rd', 'debrid_ad', 'debrid_tb', 'sharewood', 'yggflix'];
+    const accounts = ['debrid_rd', 'debrid_ad', 'debrid_tb', 'debrid_pm', 'sharewood', 'yggflix'];
 
     accounts.forEach(account => {
         const checkbox = document.getElementById(account);
@@ -252,22 +252,26 @@ function updateDebridOrderList() {
     const rdEnabled = document.getElementById('debrid_rd').checked || document.getElementById('debrid_rd').disabled;
     const adEnabled = document.getElementById('debrid_ad').checked || document.getElementById('debrid_ad').disabled;
     const tbEnabled = document.getElementById('debrid_tb').checked || document.getElementById('debrid_tb').disabled;
+    const pmEnabled = document.getElementById('debrid_pm').checked || document.getElementById('debrid_pm').disabled;
 
     if (debridOrder.length === 0 ||
         !debridOrder.every(service =>
             (service === 'Real-Debrid' && rdEnabled) ||
             (service === 'AllDebrid' && adEnabled) ||
-            (service === 'TorBox' && tbEnabled)
+            (service === 'TorBox' && tbEnabled) ||
+            (service === 'Premiumize' && pmEnabled)
         )) {
         debridOrder = [];
         if (rdEnabled) debridOrder.push('Real-Debrid');
         if (adEnabled) debridOrder.push('AllDebrid');
         if (tbEnabled) debridOrder.push('TorBox');
+        if (pmEnabled) debridOrder.push('Premiumize');
     }
 
     debridOrder.forEach(serviceName => {
         if ((serviceName === 'Real-Debrid' && rdEnabled) ||
             (serviceName === 'AllDebrid' && adEnabled) ||
+            (serviceName === 'Premiumize' && pmEnabled) ||
             (serviceName === 'TorBox' && tbEnabled)) {
             addDebridToList(serviceName);
         }
@@ -281,6 +285,9 @@ function updateDebridOrderList() {
     }
     if (tbEnabled && !debridOrder.includes('TorBox')) {
         addDebridToList('TorBox');
+    }
+    if (pmEnabled && !debridOrder.includes('Premiumize')) {
+        addDebridToList('Premiumize');
     }
 
     Sortable.create(debridOrderList, {
@@ -332,6 +339,7 @@ function updateDebridDownloaderOptions() {
     const rdEnabled = document.getElementById('debrid_rd').checked || document.getElementById('debrid_rd').disabled;
     const adEnabled = document.getElementById('debrid_ad').checked || document.getElementById('debrid_ad').disabled;
     const tbEnabled = document.getElementById('debrid_tb').checked || document.getElementById('debrid_tb').disabled;
+    const pmEnabled = document.getElementById('debrid_pm').checked || document.getElementById('debrid_pm').disabled;
 
     let firstOption = null;
 
@@ -346,6 +354,13 @@ function updateDebridDownloaderOptions() {
             firstOption = addDebridDownloaderOption('TorBox');
         } else {
             addDebridDownloaderOption('TorBox');
+        }
+    }
+    if (pmEnabled) {
+        if (!firstOption) {
+            firstOption = addDebridDownloaderOption('Premiumize');
+        } else {
+            addDebridDownloaderOption('Premiumize');
         }
     }
 
@@ -388,16 +403,18 @@ function updateProviderFields() {
         document.getElementById('debrid_ad').disabled;
     const TBdebridChecked = document.getElementById('debrid_tb').checked ||
         document.getElementById('debrid_tb').disabled;
+    const PMdebridChecked = document.getElementById('debrid_pm').checked ||
+        document.getElementById('debrid_pm').disabled;
     const cacheChecked = document.getElementById('cache')?.checked;
     const yggflixChecked = document.getElementById('yggflix')?.checked ||
         document.getElementById('yggflix')?.disabled;
     const sharewoodChecked = document.getElementById('sharewood')?.checked ||
         document.getElementById('sharewood')?.disabled;
 
-    // Mise à jour de l'affichage des champs
     setElementDisplay('rd_debrid-fields', RDdebridChecked ? 'block' : 'none');
     setElementDisplay('ad_debrid-fields', ADdebridChecked ? 'block' : 'none');
     setElementDisplay('tb_debrid-fields', TBdebridChecked ? 'block' : 'none');
+    setElementDisplay('pm_debrid-fields', PMdebridChecked ? 'block' : 'none');
     setElementDisplay('cache-fields', cacheChecked ? 'block' : 'none');
     setElementDisplay('ygg-fields', yggflixChecked ? 'block' : 'none');
     setElementDisplay('sharewood-fields', sharewoodChecked ? 'block' : 'none');
@@ -406,24 +423,20 @@ function updateProviderFields() {
     const debridOrderList = document.getElementById('debridOrderList');
 
     if (debridOrderCheckbox && debridOrderList) {
-        const anyDebridEnabled = RDdebridChecked || ADdebridChecked || TBdebridChecked;
+        const anyDebridEnabled = RDdebridChecked || ADdebridChecked || TBdebridChecked || PMdebridChecked;
 
         debridOrderCheckbox.disabled = !anyDebridEnabled;
         
-        // Mise à jour de l'état de la case à cocher debrid_order
         if (!anyDebridEnabled) {
             debridOrderCheckbox.checked = false;
         }
 
-        // Mise à jour de l'affichage de la liste d'ordre des débrideurs
         debridOrderList.classList.toggle('hidden', !(anyDebridEnabled && debridOrderCheckbox.checked));
     }
 
-    // Mise à jour des options de débrideur
     updateDebridOrderList();
     updateDebridDownloaderOptions();
 
-    // Vérification finale de la cohérence des états
     ensureDebridConsistency();
 }
 
@@ -431,14 +444,15 @@ function ensureDebridConsistency() {
     const RDdebridChecked = document.getElementById('debrid_rd').checked;
     const ADdebridChecked = document.getElementById('debrid_ad').checked;
     const TBdebridChecked = document.getElementById('debrid_tb').checked;
+    const PMdebridChecked = document.getElementById('debrid_pm').checked;
     const debridOrderChecked = document.getElementById('debrid_order').checked;
 
-    if (!RDdebridChecked && !ADdebridChecked && !TBdebridChecked) {
+    if (!RDdebridChecked && !ADdebridChecked && !TBdebridChecked && !PMdebridChecked) {
         document.getElementById('debrid_order').checked = false;
         document.getElementById('debridOrderList').classList.add('hidden');
     }
 
-    if (debridOrderChecked && !RDdebridChecked && !ADdebridChecked && !TBdebridChecked) {
+    if (debridOrderChecked && !RDdebridChecked && !ADdebridChecked && !TBdebridChecked && !PMdebridChecked) {
         document.getElementById('debrid_order').checked = false;
     }
 
@@ -489,12 +503,12 @@ function loadData() {
         debrid_rd: false,
         debrid_ad: false,
         debrid_tb: false,
+        debrid_pm: false,
         tb_usenet: false,
         tb_search: false,
         debrid_order: false
     };
 
-    // Appliquer les valeurs (de l'URL ou par défaut)
     Object.keys(defaultConfig).forEach(key => {
         const value = decodedData[key] !== undefined ? decodedData[key] : defaultConfig[key];
         if (key === 'metadataProvider') {
@@ -521,16 +535,16 @@ function loadData() {
     setElementValue('debrid_rd', serviceArray.includes('Real-Debrid'), defaultConfig.debrid_rd);
     setElementValue('debrid_ad', serviceArray.includes('AllDebrid'), defaultConfig.debrid_ad);
     setElementValue('debrid_tb', serviceArray.includes('TorBox'), defaultConfig.debrid_tb);
+    setElementValue('debrid_pm', serviceArray.includes('Premiumize'), defaultConfig.debrid_pm);
     setElementValue('debrid_order', serviceArray.length > 0, defaultConfig.debrid_order);
     
-    // Catalogues
     setElementValue('ctg_yggtorrent', decodedData.yggtorrentCtg, defaultConfig.ctg_yggtorrent);
     setElementValue('ctg_yggflix', decodedData.yggflixCtg, defaultConfig.ctg_yggflix);
     
-    // Tokens et passkeys
     setElementValue('rd_token_info', decodedData.RDToken, '');
     setElementValue('ad_token_info', decodedData.ADToken, '');
     setElementValue('tb_token_info', decodedData.TBToken, '');
+    setElementValue('pm_token_info', decodedData.PMToken, '');
     setElementValue('sharewoodPasskey', decodedData.sharewoodPasskey, '');
     setElementValue('yggPasskey', decodedData.yggPasskey, '');
     setElementValue('ApiKey', decodedData.apiKey, '');
@@ -563,6 +577,7 @@ function getLink(method) {
         RDToken: document.getElementById('rd_token_info')?.value,
         ADToken: document.getElementById('ad_token_info')?.value,
         TBToken: document.getElementById('tb_token_info')?.value,
+        PMToken: document.getElementById('pm_token_info')?.value,
         TBUsenet: document.getElementById('tb_usenet')?.checked,
         TBSearch: document.getElementById('tb_search')?.checked,
         sharewoodPasskey: document.getElementById('sharewoodPasskey')?.value,
@@ -598,6 +613,7 @@ function getLink(method) {
     if (data.service.includes('Real-Debrid') && document.getElementById('rd_token_info') && !data.RDToken) missingRequiredFields.push("Real-Debrid Account Connection");
     if (data.service.includes('AllDebrid') && document.getElementById('ad_token_info') && !data.ADToken) missingRequiredFields.push("AllDebrid Account Connection");
     if (data.service.includes('TorBox') && document.getElementById('tb_token_info') && !data.TBToken) missingRequiredFields.push("TorBox Account Connection");
+    if (data.service.includes('Premiumize') && document.getElementById('pm_token_info') && !data.PMToken) missingRequiredFields.push("Premiumize Account Connection");
     if (data.languages.length === 0) missingRequiredFields.push("Languages");
     if (!data.apiKey) missingRequiredFields.push("API Key");
     if (data.yggflix && document.getElementById('yggPasskey') && !data.yggPasskey) missingRequiredFields.push("Ygg Passkey");
@@ -608,7 +624,6 @@ function getLink(method) {
         return false;
     }
 
-    // Fonctions de validation
     function validatePasskey(passkey) {
         return /^[a-zA-Z0-9]{32}$/.test(passkey);
     }
@@ -617,7 +632,6 @@ function getLink(method) {
         return /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/.test(apiKey);
     }
 
-    // Validation des champs
     if (data.yggflix && data.yggPasskey && !validatePasskey(data.yggPasskey)) {
         alert('Ygg Passkey doit contenir exactement 32 caractères alphanumériques');
         return false;
