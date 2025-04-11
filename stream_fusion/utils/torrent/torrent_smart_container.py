@@ -254,24 +254,29 @@ class TorrentSmartContainer:
 
     def _update_availability_alldebrid(self, response, media):
         self.logger.info("TorrentSmartContainer: Updating availability for AllDebrid")
-        if response == {}:
-            self.logger.error("TorrentSmartContainer: AllDebrid response is empty")
-            return
-        if response["status"] != "success":
+        if not response["status"] == "success":
             self.logger.error(f"TorrentSmartContainer: AllDebrid API error: {response}")
             return
+
         for data in response["data"]["magnets"]:
-            if not data["instant"]:
-                self.logger.debug(
-                    f"TorrentSmartContainer: Skipping non-instant magnet: {data['hash']}"
-                )
-                continue
             torrent_item: TorrentItem = self.__itemsDict[data["hash"]]
-            files = []
-            self._explore_folders_alldebrid(
-                data["files"], files, 1, torrent_item.type, media
-            )
-            self._update_file_details(torrent_item, files, debrid="AD")
+            
+            # Set availability to AD immediately for all files
+            torrent_item.availability = "AD"
+            
+            # Process files if they exist
+            if "files" in data and data["files"]:
+                files = []
+                self._explore_folders_alldebrid(
+                    data["files"], files, 1, torrent_item.type, media
+                )
+                if files:  # If we found matching files
+                    self._update_file_details(torrent_item, files, debrid="AD")
+            else:
+                # If no files data, still mark as available
+                self.logger.debug(f"No files data for hash {data['hash']}, but marking as available")
+                torrent_item.availability = "AD"
+                
         self.logger.info(
             "TorrentSmartContainer: AllDebrid availability update completed"
         )
@@ -324,18 +329,86 @@ class TorrentSmartContainer:
 
     def _update_availability_premiumize(self, response):
         self.logger.info("TorrentSmartContainer: Updating availability for Premiumize")
-        if response["status"] != "success":
+        if not response:
             self.logger.error(
-                f"TorrentSmartContainer: Premiumize API error: {response}"
+                f"TorrentSmartContainer: Empty response from Premiumize API"
             )
             return
+
         torrent_items = self.get_items()
-        for i, is_available in enumerate(response["response"]):
-            if bool(is_available):
-                torrent_items[i].availability = response["transcoded"][i]
-                self.logger.debug(
-                    f"TorrentSmartContainer: Updated availability for item {i}: {torrent_items[i].availability}"
-                )
+        for hash, status in response.items():
+            for item in torrent_items:
+                if item.info_hash.lower() == hash.lower():
+                    is_available = status.get("transcoded", False)
+                    item.availability = "PM" if is_available else None
+                    
+                    # Mettre à jour les détails du fichier si disponible
+                    if is_available:
+                        if item.type == "series":
+                            # Pour les séries, vérifier si le fichier sélectionné correspond à l'épisode
+                            if "full_index" in item.__dict__ and item.full_index:
+                                # Si nous avons l'index complet des fichiers, l'utiliser
+                                matching_files = []
+                                for file_info in item.full_index:
+                                    clean_season = self.__media.season.replace("S", "")
+                                    clean_episode = self.__media.episode.replace("E", "")
+                                    numeric_season = int(clean_season)
+                                    numeric_episode = int(clean_episode)
+                                    
+                                    if (numeric_season in file_info.get("seasons", []) and 
+                                        numeric_episode in file_info.get("episodes", [])):
+                                        matching_files.append(file_info)
+                                
+                                if matching_files:
+                                    # Prendre le plus gros fichier parmi ceux qui correspondent
+                                    best_match = max(matching_files, key=lambda x: x.get("size", 0))
+                                    file_info = {
+                                        "file_index": best_match.get("file_index", 0),
+                                        "title": best_match.get("file_name", ""),
+                                        "size": best_match.get("size", 0)
+                                    }
+                                    self._update_file_details(item, [file_info], debrid="PM")
+                                    self.logger.debug(
+                                        f"TorrentSmartContainer: Updated series file details from full_index for {item.raw_title}: {file_info}"
+                                    )
+                                else:
+                                    # Si aucun fichier ne correspond dans l'index, garder quand même le torrent
+                                    self.logger.debug(
+                                        f"TorrentSmartContainer: No matching file found in full_index for {item.raw_title}, keeping torrent"
+                                    )
+                                    file_info = {
+                                        "file_index": 0,
+                                        "title": status.get("filename", item.raw_title),
+                                        "size": int(status.get("filesize", 0))
+                                    }
+                                    self._update_file_details(item, [file_info], debrid="PM")
+                            else:
+                                # Si pas d'index complet, garder le torrent
+                                file_info = {
+                                    "file_index": 0,
+                                    "title": status.get("filename", item.raw_title),
+                                    "size": int(status.get("filesize", 0))
+                                }
+                                self._update_file_details(item, [file_info], debrid="PM")
+                                self.logger.debug(
+                                    f"TorrentSmartContainer: No full_index available for {item.raw_title}, keeping torrent"
+                                )
+                        else:
+                            # Pour les films, utiliser les informations de base
+                            file_info = {
+                                "file_index": 0,
+                                "title": status.get("filename") or item.raw_title,
+                                "size": int(status.get("filesize", 0))
+                            }
+                            self._update_file_details(item, [file_info], debrid="PM")
+                            self.logger.debug(
+                                f"TorrentSmartContainer: Updated movie file details for {item.raw_title}: {file_info}"
+                            )
+                    
+                    self.logger.debug(
+                        f"TorrentSmartContainer: Updated availability for {item.raw_title}: {item.availability}"
+                    )
+
         self.logger.info(
             "TorrentSmartContainer: Premiumize availability update completed"
         )
