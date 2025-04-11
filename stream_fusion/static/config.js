@@ -498,6 +498,7 @@ function loadData() {
         ctg_yggflix: false,
         metadataProvider: 'tmdb',
         sort: 'qualitythensize',
+        exclusion: ['cam'],
         languages: ['fr', 'multi'],
         debrid_rd: false,
         debrid_ad: false,
