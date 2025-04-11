@@ -87,7 +87,7 @@ class StreamParser:
         if torrent_item.availability == "RD":
             name = f"{INSTANTLY_AVAILABLE}instant\nReal-Debrid\n({resolution})"
         elif torrent_item.availability == "AD":
-            name = f"{INSTANTLY_AVAILABLE}instant\nAllDebrid\n({resolution})"
+            name = f"[AD{INSTANTLY_AVAILABLE}]\nrazeNio\n({resolution})"
         elif torrent_item.availability == "TB":
             name = f"{INSTANTLY_AVAILABLE}instant\nTorBox\n({resolution})"
         elif torrent_item.availability == "PM":
