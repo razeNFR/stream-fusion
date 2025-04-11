@@ -49,7 +49,7 @@ async def get_manifest():
     logger.info("Serving manifest.json")
     return ManifestResponse(
         id="community.limedrive.streamfusion",
-        icon="https://i.imgur.com/Fcd0heB.png",
+        icon="https://i.ibb.co/7NKRQK9w/razenio200x200.png",
         version=str(get_version()),
         resources=[
             'catalog',
@@ -61,7 +61,7 @@ async def get_manifest():
         ],
         types=["movie", "series"],
         name="razeNio" + (" (dev)" if settings.develop else ""),
-        description="StreamFusion enhances Stremio by integrating torrent indexers and debrid services, "
+        description="razeNio enhances Stremio by integrating torrent indexers and debrid services, "
                     "providing access to a vast array of cached torrent sources. This plugin seamlessly bridges "
                     "Stremio with popular indexers and debrid platforms, offering users an expanded content "
                     "library and a smooth streaming experience.",
@@ -147,7 +147,7 @@ async def get_manifest(config: str, apikey_dao: APIKeyDAO = Depends()):
     logger.info("Serving manifest.json")
     return ManifestResponse(
         id="community.limedrive.streamfusion",
-        icon="https://i.imgur.com/Fcd0heB.png",
+        icon="https://i.ibb.co/7NKRQK9w/razenio200x200.png",
         version=str(get_version()),
         resources=[
             'catalog',
@@ -159,7 +159,7 @@ async def get_manifest(config: str, apikey_dao: APIKeyDAO = Depends()):
         ],
         types=["movie", "series"],
         name="razeNio" + (" (dev)" if settings.develop else ""),
-        description="StreamFusion enhances Stremio by integrating torrent indexers and debrid services,"
+        description="razeNio enhances Stremio by integrating torrent indexers and debrid services,"
          " providing access to a vast array of cached torrent sources. This plugin seamlessly bridges"
          " Stremio with popular indexers and debrid platforms, offering users an expanded content"
          " library and a smooth streaming experience.",
