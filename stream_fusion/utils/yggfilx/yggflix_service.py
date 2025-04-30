@@ -103,7 +103,7 @@ class YggflixService:
                 if result.get("id")
                 else None
             )
-            item.indexer="YGG"
+            item.indexer="Ygg"
             item.seeders=result.get("seeders", 0)
             item.privacy="private"
             item.languages=detect_languages(item.raw_title, default_language="fr")
