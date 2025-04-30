@@ -219,7 +219,7 @@ class SharewoodService:
                 else None
             )
             item.magnet = self.__generate_magnet_link(item.info_hash, item.raw_title)
-            item.indexer = "Sharewood - API"
+            item.indexer = "Sharewood"
             item.seeders = result.get("seeders", 0)
             item.privacy = "private"
             item.languages = detect_languages(item.raw_title, default_language="fr")
