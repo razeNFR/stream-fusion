@@ -125,7 +125,7 @@ class StreamParser:
 
         group = extract_release_group(torrent_item.raw_title) or parsed_data.group
         if group:
-            info += f"  ☠️ {group}"
+            info += f"  👻 {group}"
 
         return f"{info}\n"
 
@@ -136,11 +136,11 @@ class StreamParser:
     def _add_media_info(self, parsed_data: ParsedData) -> str:
         info = []
         if parsed_data.codec:
-            info.append(f"🎥 {parsed_data.codec}")
+            info.append(f"🎬 {parsed_data.codec}")
         if parsed_data.quality:
-            info.append(f"📺 {parsed_data.quality}")
+            info.append(f"📀 {parsed_data.quality}")
         if parsed_data.audio:
-            info.append(f"🎧 {' '.join(parsed_data.audio)}")
+            info.append(f"🔊 {' '.join(parsed_data.audio)}")
         return " ".join(info) + "\n" if info else ""
 
     def _add_direct_torrent_stream(
