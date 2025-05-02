@@ -5,11 +5,11 @@ from fastapi.templating import Jinja2Templates
 
 from stream_fusion.logging_config import logger
 from stream_fusion.services.postgresql.dao.apikey_dao import APIKeyDAO
+from stream_fusion.settings import settings
 from stream_fusion.utils.parse_config import parse_config
 from stream_fusion.utils.security.security_api_key import check_api_key
 from stream_fusion.version import get_version
 from stream_fusion.web.root.config.schemas import ManifestResponse
-from stream_fusion.settings import settings
 
 router = APIRouter()
 
@@ -49,7 +49,7 @@ async def get_manifest():
     logger.info("Serving manifest.json")
     return ManifestResponse(
         id="community.limedrive.streamfusion",
-        icon="https://i.ibb.co/7NKRQK9w/razenio200x200.png",
+        icon="https://i.imgur.com/q2VSdSp.png",
         version=str(get_version()),
         resources=[
             'catalog',
@@ -61,7 +61,7 @@ async def get_manifest():
         ],
         types=["movie", "series"],
         name="razeNio" + (" (dev)" if settings.develop else ""),
-        description="razeNio enhances Stremio by integrating torrent indexers and debrid services, "
+        description="StreamFusion enhances Stremio by integrating torrent indexers and debrid services, "
                     "providing access to a vast array of cached torrent sources. This plugin seamlessly bridges "
                     "Stremio with popular indexers and debrid platforms, offering users an expanded content "
                     "library and a smooth streaming experience.",
@@ -108,8 +108,13 @@ async def get_manifest(config: str, apikey_dao: APIKeyDAO = Depends()):
     if api_key:
         await check_api_key(api_key, apikey_dao)
     else:
-        logger.warning("API key not found in config.")
-        raise HTTPException(status_code=401, detail="API key not found in config.")
+        # Check if anonymous access is allowed
+        if not settings.allow_anonymous_access: # If NOT allowed
+            logger.warning("Anonymous access denied and API key not found in config.")
+            raise HTTPException(status_code=401, detail="API key required or anonymous access disabled.")
+        else: # If anonymous access IS allowed, just log and continue
+            logger.info("Proceeding without API key (anonymous access allowed).")
+            # No exception is raised, execution continues
 
     yggflix_ctg = config.get("yggflixCtg", True)
     yggtorrent_ctg = config.get("yggtorrentCtg", True)
@@ -147,7 +152,7 @@ async def get_manifest(config: str, apikey_dao: APIKeyDAO = Depends()):
     logger.info("Serving manifest.json")
     return ManifestResponse(
         id="community.limedrive.streamfusion",
-        icon="https://i.ibb.co/7NKRQK9w/razenio200x200.png",
+        icon="https://i.imgur.com/q2VSdSp.png",
         version=str(get_version()),
         resources=[
             'catalog',
@@ -159,7 +164,7 @@ async def get_manifest(config: str, apikey_dao: APIKeyDAO = Depends()):
         ],
         types=["movie", "series"],
         name="razeNio" + (" (dev)" if settings.develop else ""),
-        description="razeNio enhances Stremio by integrating torrent indexers and debrid services,"
+        description="StreamFusion enhances Stremio by integrating torrent indexers and debrid services,"
          " providing access to a vast array of cached torrent sources. This plugin seamlessly bridges"
          " Stremio with popular indexers and debrid platforms, offering users an expanded content"
          " library and a smooth streaming experience.",
