@@ -222,14 +222,14 @@ async def get_stream_link(
     if link != settings.no_cache_video_url:
         logger.debug(f"Playback: Caching new stream link: {link}")
         await redis_cache.set(cache_key, link, expiration=3600)  # Cache for 1 hour
-        logger.info(f"Playback: New stream link generated and cached: {link}")
+        logger.info(f"Playback: New stream link gened and cached: {link}")
     else:
         logger.debug("Playback: Stream link not cached (NO_CACHE_VIDEO_URL)")
     return link
 
 
 @router.get("/{config}/{query}", responses={500: {"model": ErrorResponse}})
-@rate_limiter(limit=20, seconds=60, redis=redis_session)
+#@rate_limiter(limit=20, seconds=60, redis=redis_session)
 async def get_playback(
     config: str,
     query: str,
