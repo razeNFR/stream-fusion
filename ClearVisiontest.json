@@ -1,6 +1,6 @@
 {
-    "name": "SkyMoled 0.2",
-    "description": "Amoled with forest and sky landscape.",
+    "name": "SkyMoled 0.3",
+    "description": "Clear Vision paints serenity across the canvas of our Discord realm.",
     "authors": [
       {
          "name": "Taki_Shiwa, edited by Sunny",
@@ -24,14 +24,14 @@
             "#000000"
         ],
         "BACKGROUND_MENTIONED": [
-            "#bdae931a",
-            "#665c541a",
-            "#bdae931a"
+            "#ffffff33",
+            "#ffffff33",
+            "#ffffff33"
         ],
         "BACKGROUND_MENTIONED_HOVER": [
-            "#bdae931a",
-            "#665c541a",
-            "#bdae931a"
+            "#ffffff33",
+            "#ffffff33",
+            "#ffffff33"
         ],
         "BACKGROUND_MESSAGE_HOVER": [
             "#bdae931a",
@@ -249,9 +249,9 @@
             "#000000"
         ],
         "HEADER_PRIMARY": [
-            "#dcddde",
-            "#000000",
-            "#dcddde"
+            "#ffffff",
+            "#ffffff",
+            "#ffffff"
         ],
         "HEADER_SECONDARY": [
             "#555555",
@@ -454,9 +454,9 @@
             "#888888"
         ],
         "TEXT_NORMAL": [
-            "#dcddde",
-            "#dcddde",
-            "#dcddde"
+            "#ffffff",
+            "#ffffff",
+            "#ffffff"
         ],
         "TEXT_POSITIVE": [
             "#689d6a",
