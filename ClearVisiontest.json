@@ -1,9 +1,9 @@
 {
-    "name": "SkyMoled 0.5",
+    "name": "SkyMoled 0.6",
     "description": "Amoled theme with sky and forest background.",
     "authors": [
       {
-         "name": "Taki_Shiwa, edited by Sunny and reedit by razeN",
+         "name": "razeN",
          "id": "466968658997149706"
       }
     ],
@@ -254,9 +254,9 @@
             "#ffffff"
         ],
         "HEADER_SECONDARY": [
-            "#555555",
-            "#555555",
-            "#555555"
+            "#ffffff",
+            "#ffffff",
+            "#ffffff"
         ],
         "INFO_DANGER_BACKGROUND": [
             "#000000",
