@@ -134,9 +134,9 @@
             "#575a68"			
         ],
         "CHANNEL_ICON": [
-            "#3333334d",
-            "#3333334d",
-            "#3333334d"
+            "#ffffff",
+            "#ffffff",
+            "#ffffff"
         ],
         "CHAT_BACKGROUND": [
             "transparent",
@@ -534,5 +534,4 @@
     },
     "spec": 2
 }
-
 
