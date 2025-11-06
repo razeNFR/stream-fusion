@@ -1,5 +1,5 @@
 {
-    "name": "SkyMoled 0.4",
+    "name": "SkyMoled 0.5",
     "description": "Amoled theme with sky and forest background.",
     "authors": [
       {
@@ -129,9 +129,9 @@
         "#000000"
     ],
         "CHANNELS_DEFAULT": [
-            "#575a68",
-            "#575a68",
-            "#575a68"			
+            "#ffffff",
+            "#ffffff",
+            "#ffffff"			
         ],
         "CHANNEL_ICON": [
             "#ffffff",
@@ -339,9 +339,9 @@
             "#3f414c"
         ],
         "INTERACTIVE_NORMAL": [
-            "#cccccc",
-            "#cccccc",
-            "#cccccc"
+            "#ffffff",
+            "#ffffff",
+            "#ffffff"
         ],
         "LOGO_PRIMARY": [
             "#83a598",
@@ -439,14 +439,14 @@
             "#fb4934"
         ],
         "TEXT_LINK": [
-            "#555555",
-            "#555555",
-            "#555555"
+            "#ffffff",
+            "#ffffff",
+            "#ffffff"
         ],
         "TEXT_LINK_LOW_SATURATION": [
-            "#dcddde",
-            "#000000",
-            "#dcddde"
+            "#ffffff",
+            "#ffffff",
+            "#ffffff"
         ],
         "TEXT_MUTED": [
             "#888888",
@@ -516,7 +516,7 @@
     "PLUM_22": "#000000"
     },
     "background": {
-        "url": "https://i.imgur.com/tuCxfuN.jpeg",
+        "url": "https://i.imgur.com/OHW3918.jpeg",
     "alpha": 1
     },
     "plus": {
