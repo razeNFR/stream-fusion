@@ -1,18 +1,18 @@
 {
     "name": "ClearVision Test v1.2.6",
     "description": "Clear Vision paints serenity across the canvas of our Discord realm.",
-	"authors": [
+    "authors": [
       {
          "name": "Taki_Shiwa, edited by Sunny",
          "id": "466968658997149706"
       }
     ],
     "semanticColors": {
-	"ANDROID_RIPPLE": [
-	    "#07448a",
-	    "#07448a",
-	    "#07448a"
-	],
+    "ANDROID_RIPPLE": [
+        "#1a1a1a",
+        "#1a1a1a",
+        "#1a1a1a"
+    ],
         "ACTIVITY_CARD_BACKGROUND": [
             "#fb4934",
             "#9d0006",
@@ -49,9 +49,9 @@
             "#061428"
         ],
         "BACKGROUND_ACCENT": [
-            "#86b4ea",
-            "#86b4ea",
-            "#86b4ea"
+            "#aaaaaa",
+            "#aaaaaa",
+            "#aaaaaa"
         ],
         "BACKGROUND_MODIFIER_ACCENT": [
             "#222959",
@@ -59,19 +59,19 @@
             "#222959"
         ],
         "BACKGROUND_MODIFIER_ACTIVE": [
-            "#2678d626",
+            "#33333326",
             "#06142826",
-            "#2678d626"
+            "#33333326"
         ],
         "BACKGROUND_MODIFIER_HOVER": [
-            "#2678d626",
+            "#33333326",
             "#06142826",
-            "#2678d626"
+            "#33333326"
         ],
         "BACKGROUND_MODIFIER_SELECTED": [
-            "#2678d699",
-            "#2678d699",
-            "#2678d699"
+            "#33333399",
+            "#33333399",
+            "#33333399"
         ],
         "BACKGROUND_NESTED_FLOATING": [
             "#0a2848",
@@ -98,60 +98,60 @@
             "#04122e",
             "#04122e"
         ],
-	"BG_BACKDROP": [
-	    "#102b48b3",
-	    "#102b48b3",
-	    "#102b48b3"
-	],
-	"BG_BASE_PRIMARY": [
-	    "#03081c",
-	    "#03081c",
-	    "#03081c"
-	],
-	"BG_SURFACE_OVERLAY_TMP": [
+    "BG_BACKDROP": [
+        "#102b48b3",
+        "#102b48b3",
+        "#102b48b3"
+    ],
+    "BG_BASE_PRIMARY": [
+        "#03081c",
+        "#03081c",
+        "#03081c"
+    ],
+    "BG_SURFACE_OVERLAY_TMP": [
             "#03081c",
-	    "#03081c",
-	    "#03081c"
+        "#03081c",
+        "#03081c"
         ],
         "BUG_REPORTER_MODAL_SUBMITTING_BACKGROUND": [
             "#0a2848",
             "#dcddde",
             "#000000"
         ],
-	"CARD_PRIMARY_BG": [
-	    "#03081c",
-	    "#03081c",
-	    "#03081c"
-	],
-	"CARD_SECONDARY_BG": [
-	    "#03081c",
-	    "#03081c",
-	    "#03081c"
-	],
+    "CARD_PRIMARY_BG": [
+        "#03081c",
+        "#03081c",
+        "#03081c"
+    ],
+    "CARD_SECONDARY_BG": [
+        "#03081c",
+        "#03081c",
+        "#03081c"
+    ],
         "CHANNELS_DEFAULT": [
             "#575a68",
             "#575a68",
             "#575a68"			
         ],
         "CHANNEL_ICON": [
-            "#2780E64d",
-            "#2780E64d",
-            "#2780E64d"
+            "#3333334d",
+            "#3333334d",
+            "#3333334d"
         ],
         "CHAT_BACKGROUND": [
             "transparent",
             "transparent",
             "transparent"
         ],
-	"CHAT_SWIPE_TO_REPLY_BACKGROUND": [
-	    "#0f1428",
-	    "#0f1428",
-	    "#0f1428"
-	],
+    "CHAT_SWIPE_TO_REPLY_BACKGROUND": [
+        "#0f1428",
+        "#0f1428",
+        "#0f1428"
+    ],
         "CHANNEL_TEXT_AREA_PLACEHOLDER":  [
-            "#81b6ef",
-            "#81b6ef",
-            "#81b6ef"
+            "#cccccc",
+            "#cccccc",
+            "#cccccc"
         ],
         "CHANNELTEXTAREA_BACKGROUND": [
             "#0a2848",
@@ -223,21 +223,21 @@
             "#dcddde",
             "#000000"
         ],
-	"EMBED_BACKGROUND": [
-	    "#031d30b3",
-	    "#031d30b3",
-	    "#031d30b3"
-	],
+    "EMBED_BACKGROUND": [
+        "#031d30b3",
+        "#031d30b3",
+        "#031d30b3"
+    ],
         "ELEVATION_STROKE": [
             "#0a2848",
             "#dcddde",
             "#000000"
         ],
-	"EXPRESSION_PICKER_BG": [
-	    "#111423",
-	    "#111423",
-	    "#111423"
-	],
+    "EXPRESSION_PICKER_BG": [
+        "#111423",
+        "#111423",
+        "#111423"
+    ],
         "FOCUS_PRIMARY": [
             "#0a2848",
             "#dcddde",
@@ -254,9 +254,9 @@
             "#dcddde"
         ],
         "HEADER_SECONDARY": [
-            "#2780E6",
-            "#2780E6",
-            "#2780E6"
+            "#555555",
+            "#555555",
+            "#555555"
         ],
         "INFO_DANGER_BACKGROUND": [
             "#0a2848",
@@ -264,7 +264,7 @@
             "#071e36"
         ],
         "INFO_DANGER_FOREGROUND": [
-            "#061428",
+            "#000000",
             "#7eb3f0",
             "#000000"
         ],
@@ -279,14 +279,14 @@
             "#000000"
         ],
         "INFO_HELP_FOREGROUND": [
-            "#071e36",
+            "#1a1a1a",
             "#dbeafa",
             "#000000"
         ],
         "INFO_HELP_TEXT": [
             "#dcddde",
             "#0a2848",
-            "#7eb3f0"
+            "#aaaaaa"
         ],
         "INFO_POSITIVE_BACKGROUND": [
             "#0a2848",
@@ -294,7 +294,7 @@
             "#000000"
         ],
         "INFO_POSITIVE_FOREGROUND": [
-            "#071e36",
+            "#1a1a1a",
             "#dbeafa",
             "#000000"
         ],
@@ -309,7 +309,7 @@
             "#000000"
         ],
         "INFO_WARNING_FOREGROUND": [
-            "#071e36",
+            "#1a1a1a",
             "#dbeafa",
             "#000000"
         ],
@@ -324,9 +324,9 @@
             "#102b47"
         ],
         "INTERACTIVE_ACTIVE": [
-            "#2780E6",
-            "#2780E6",
-            "#2780E6"
+            "#555555",
+            "#555555",
+            "#555555"
         ],
         "INTERACTIVE_HOVER": [
             "#061428",
@@ -339,40 +339,40 @@
             "#3f414c"
         ],
         "INTERACTIVE_NORMAL": [
-            "#81b6ef",
-            "#81b6ef",
-            "#81b6ef"
+            "#cccccc",
+            "#cccccc",
+            "#cccccc"
         ],
         "LOGO_PRIMARY": [
             "#83a598",
             "#076678",
             "#83a598"
         ],
-	"MENTION_FOREGROUND": [
-	    "#ffffff",
-	    "#ffffff",
-	    "#ffffff"
-	],
+    "MENTION_FOREGROUND": [
+        "#ffffff",
+        "#ffffff",
+        "#ffffff"
+    ],
         "MODAL_FOOTER_BACKGROUND": [
             "#0a2848",
             "#7eb3f0",
             "#000000"
         ],
-	"PANEL_BG": [
-	    "#111423",
+    "PANEL_BG": [
+        "#111423",
             "#111423",
             "#111423"
-	],
-	"REDESIGN_BUTTON_SECONDARY_BACKGROUND": [
-	    "#03081c",
-	    "#03081c",
-	    "#03081c"
-	],
-	"REDESIGN_BUTTON_SECONDARY_BORDER": [
-	    "#222959",
+    ],
+    "REDESIGN_BUTTON_SECONDARY_BACKGROUND": [
+        "#03081c",
+        "#03081c",
+        "#03081c"
+    ],
+    "REDESIGN_BUTTON_SECONDARY_BORDER": [
+        "#222959",
             "#222959",
             "#222959"
-	],
+    ],
         "SCROLLBAR_AUTO_THUMB": [
             "#061428",
             "#061428",
@@ -423,11 +423,11 @@
             "#9d0006",
             "#fb4934"
         ],
-	"TYPING_INDICATOR_BG": [
-	    "#00000066",
-	    "#00000066",
-	    "#00000066"
-	],
+    "TYPING_INDICATOR_BG": [
+        "#00000066",
+        "#00000066",
+        "#00000066"
+    ],
         "TEXTBOX_MARKDOWN_SYNTAX": [
             "#076678",
             "#076678",
@@ -439,9 +439,9 @@
             "#fb4934"
         ],
         "TEXT_LINK": [
-            "#2780E6",
-            "#2780E6",
-            "#2780E6"
+            "#555555",
+            "#555555",
+            "#555555"
         ],
         "TEXT_LINK_LOW_SATURATION": [
             "#dcddde",
@@ -449,9 +449,9 @@
             "#dcddde"
         ],
         "TEXT_MUTED": [
-            "#2678d6",
-            "#2678d6",
-            "#2678d6"
+            "#888888",
+            "#888888",
+            "#888888"
         ],
         "TEXT_NORMAL": [
             "#dcddde",
@@ -471,22 +471,22 @@
     },
     "rawColors": {
         "BG_GRADIENT_CRIMSON_MOON_2": "#000000",
-        "PRIMARY_100": "#3789E6",
-        "PRIMARY_130": "#dbeafa",
-        "PRIMARY_200": "#7eb3f0",
-        "PRIMARY_230": "#7eb3f0",
-        "PRIMARY_300": "#3789E6",
-        "PRIMARY_360": "#2780E6",
-        "PRIMARY_400": "#0f4480",
-        "PRIMARY_460": "#061428",
-        "PRIMARY_500": "#114d91",
-        "PRIMARY_560": "#102b47",
-        "PRIMARY_600": "#061428",
+        "PRIMARY_100": "#555555",
+        "PRIMARY_130": "#eeeeee",
+        "PRIMARY_200": "#aaaaaa",
+        "PRIMARY_230": "#aaaaaa",
+        "PRIMARY_300": "#555555",
+        "PRIMARY_360": "#333333",
+        "PRIMARY_400": "#1a1a1a",
+        "PRIMARY_460": "#000000",
+        "PRIMARY_500": "#1a1a1a",
+        "PRIMARY_560": "#1a1a1a",
+        "PRIMARY_600": "#000000",
         "PRIMARY_630": "#000000",
         "PRIMARY_660": "#000000",
         "PRIMARY_700": "#000000",
         "PRIMARY_800": "#000000",
-        "PRIMARY_900": "#0a2848",
+        "PRIMARY_900": "#1a1a1a",
         "BLACK_500": "#000000",
         "BLACK_530": "#000000",
         "BLACK_560": "#000000",
@@ -501,23 +501,23 @@
         "BLACK_860": "#000000",
         "BLACK_900": "#000000",
         "BRAND_230": "#ffffff",
-        "BRAND_260": "#86b4ea",
-        "BRAND_360": "#4b96e7",
-        "BRAND_500": "#2780E6",
-        "BRAND_560": "#3789E6",
-        "RED_400": "#2780E6",
-        "RED_430": "#2780E6",
-        "RED_460": "#2780E6",
+        "BRAND_260": "#aaaaaa",
+        "BRAND_360": "#555555",
+        "BRAND_500": "#333333",
+        "BRAND_560": "#555555",
+        "RED_400": "#333333",
+        "RED_430": "#333333",
+        "RED_460": "#333333",
         "GREEN_360": "#689d6a",
         "WHITE_500": "#dcddde",
-        "YELLOW_300": "#2780E6",
-	"PLUM_20": "#111423",
-	"PLUM_16": "#111533",
-	"PLUM_22": "#0f1428"
+        "YELLOW_300": "#333333",
+    "PLUM_20": "#000000",
+    "PLUM_16": "#000000",
+    "PLUM_22": "#000000"
     },
     "background": {
-        "url": "https://plus.unsplash.com/premium_photo-1671230599840-d0b3eb767e61?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=627",
-	"alpha": 1
+        "url": "https://wallpapercave.com/wp/wp6924280.jpg",
+    "alpha": 1
     },
     "plus": {
         "version": 0,
@@ -533,5 +533,4 @@
         "iconpack":"rosiecord-plumpy"
     },
     "spec": 2
-
-            }
+}
