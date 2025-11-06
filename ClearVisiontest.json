@@ -1,5 +1,5 @@
 {
-    "name": "SkyMoled 0.8",
+    "name": "SkyMoled 0.9",
     "description": "Amoled theme with sky and forest background.",
     "authors": [
       {
@@ -530,7 +530,7 @@
             "ic_video": "#111111",
             "ic_video_disabled": "#111111"
         },
-        "iconpack":"md3"
+        "iconpack":"md3legacy"
     },
     "spec": 2
 }
