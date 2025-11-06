@@ -1,9 +1,9 @@
 {
-    "name": "SkyMoled 0.3",
-    "description": "Clear Vision paints serenity across the canvas of our Discord realm.",
+    "name": "SkyMoled 0.4",
+    "description": "Amoled theme with sky and forest background.",
     "authors": [
       {
-         "name": "Taki_Shiwa, edited by Sunny",
+         "name": "Taki_Shiwa, edited by Sunny and reedit by razeN",
          "id": "466968658997149706"
       }
     ],
@@ -516,7 +516,7 @@
     "PLUM_22": "#000000"
     },
     "background": {
-        "url": "https://i.imgur.com/NykEidy.jpeg",
+        "url": "https://i.imgur.com/tuCxfuN.jpeg",
     "alpha": 1
     },
     "plus": {
