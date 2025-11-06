@@ -1,5 +1,5 @@
 {
-    "name": "ClearVision Test v1.2.6",
+    "name": "SkyMoled 0.1",
     "description": "Clear Vision paints serenity across the canvas of our Discord realm.",
     "authors": [
       {
@@ -534,4 +534,5 @@
     },
     "spec": 2
 }
+
 
