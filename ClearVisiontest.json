@@ -516,7 +516,7 @@
 	"PLUM_22": "#0f1428"
     },
     "background": {
-        "url": "https://i.pinimg.com/736x/56/91/df/5691df5ea7b002bae5df41d4fd4f4888.jpg",
+        "url": "https://plus.unsplash.com/premium_photo-1671230599840-d0b3eb767e61?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=627",
 	"alpha": 1
     },
     "plus": {
@@ -533,4 +533,5 @@
         "iconpack":"rosiecord-plumpy"
     },
     "spec": 2
+
             }
