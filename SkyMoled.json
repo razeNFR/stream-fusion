@@ -201,7 +201,7 @@
         "PRIMARY_560": "#000000",
         "PRIMARY_600": "#000000",
         "PRIMARY_630": "#000000",
-        "PLUM_15": "#141414",
+        "PLUM_15": "#FFFFFF",
         "PLUM_17": "#000000",
         "PLUM_18": "#000000",
         "PLUM_19": "#000000",
@@ -211,7 +211,7 @@
 		    },
     "background": {
         "url": "https://i.imgur.com/OHW3918.jpeg",
-    "alpha": 5
+    "alpha": 1
     },
     "plus": {
         "version": 0,
