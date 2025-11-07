@@ -1,6 +1,6 @@
 {
     "name": "SkyMoled v1.0.1",
-    "description": "Amoled theme with sky and forest background",
+    "description": "BG GREY Amoled theme with sky and forest background",
     "version": "1.0.1",
     "authors": [
         {
@@ -128,7 +128,7 @@
             "#141414"
         ],
         "BACKGROUND_SECONDARY": [
-            "#000000"
+            "#808080"
         ],
         "BACKGROUND_MODIFIER_ACCENT": [
             "#141414"
