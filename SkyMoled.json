@@ -13,12 +13,18 @@
         "mentionLineColor": "#FFFFFF"
     },
     "semanticColors": {
+        "ANDROID_RIPPLE": [
+            "#3f414c"
+        ],
         "BACKGROUND_TERTIARY": [
             "#141414"
         ],
         "BACKGROUND_ACCENT": [
             "#3f414c"
         ],
+        "BORDER_FAINT": [
+            "#2D2D2D"
+        ],		
         "DIVIDER_STRONG": [
             "#000000"
         ],
