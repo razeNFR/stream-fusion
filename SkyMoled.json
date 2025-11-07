@@ -166,7 +166,7 @@
         "BRAND_260": "#FFFFFF",
         "BRAND_360": "#FFFFFF",
         "BRAND_560": "#000000",
-        "BRAND_500": "#141414",
+        "BRAND_500": "#333333",
         "ORANGE_260": "#FFFFFF",
         "ORANGE_300": "#FFFFFF",
         "ORANGE_330": "#FFFFFF",
@@ -197,7 +197,7 @@
         "YELLOW_630": "#FFFFFF",
         "YELLOW_660": "#FFFFFF",
         "YELLOW_700": "#FFFFFF",
-        "RED_430": "#009AFF",
+        "RED_430": "#333333",
         "PLUM_14": "#222222",
         "PRIMARY_800": "#222222",
         "PLUM_1": "#FFFFFF",
@@ -207,6 +207,7 @@
         "PRIMARY_560": "#000000",
         "PRIMARY_600": "#000000",
         "PRIMARY_630": "#000000",
+        "PLUM_13": "#141414"
         "PLUM_15": "#000000",
         "PLUM_17": "#000000",
         "PLUM_18": "#000000",
@@ -222,7 +223,6 @@
     },
     "plus": {
         "version": 0,
-        "customOverlays": true,
         "icons": {
             "ic_mic_neutral": "#111111",
             "ic_mic_muted_neutral": "#111111",
