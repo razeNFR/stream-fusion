@@ -1,7 +1,7 @@
 {
-    "name": "SkyMoled v1.0",
+    "name": "SkyMoled v1.0.1",
     "description": "Amoled theme with sky and forest background",
-    "version": "1.0",
+    "version": "1.0.1",
     "authors": [
         {
             "name": "razeN",
@@ -134,7 +134,7 @@
             "#141414"
         ],
         "INTERACTIVE_MUTED": [
-            "#141414"
+            "#3f414c"
         ],
         "STATUS_DANGER": [
             "#880808"
