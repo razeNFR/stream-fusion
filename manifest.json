@@ -1,0 +1,7 @@
+{
+  "name": "AutoInvisible",
+  "description": "Force ton statut à rester invisible au lancement de Discord",
+  "author": "Robin",
+  "version": "1.0.0",
+  "main": "index.js"
+}
