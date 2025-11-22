@@ -1,24 +1,22 @@
-module.exports = {
-    start() {
-        const { Dispatcher } = require("discord-revenge");
+import { FluxDispatcher } from "@vendetta/metro/common";
 
-        function setInvisible() {
-            Dispatcher.dispatch({
-                type: "USER_SETTINGS_UPDATE",
-                status: "invisible"
-            });
-        }
+export default {
+  onLoad() {
+    const setInvisible = () => {
+      FluxDispatcher.dispatch({
+        type: "LOCAL_STATUS_UPDATE",
+        status: "invisible"
+      });
+    };
 
-        // Appliquer invisible dès le lancement
-        setInvisible();
+    // Appliquer invisible au démarrage
+    setInvisible();
 
-        // Réappliquer si l'app change d'état
-        Dispatcher.subscribe("APP_STATE_UPDATE", () => {
-            setInvisible();
-        });
-    },
+    // Réappliquer si l’app change d’état
+    FluxDispatcher.subscribe("APP_STATE_UPDATE", setInvisible);
+  },
 
-    stop() {
-        // Rien à nettoyer, mais tu pourrais retirer des listeners si besoin
-    }
+  onUnload() {
+    // Nettoyage si besoin
+  }
 };
