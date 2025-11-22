@@ -1,7 +1,12 @@
 {
   "name": "AutoInvisible",
-  "description": "Force ton statut à rester invisible au lancement de Discord",
-  "author": "Robin",
+  "description": "Force ton statut à invisible au lancement",
+  "authors": [
+    {
+      "name": "razenfr",
+      "id": "362736895685296130"
+    }
+  ],
   "version": "1.0.0",
   "main": "index.js"
 }
