@@ -18,5 +18,6 @@ export default {
 
   onUnload() {
     // Nettoyage si besoin
+    FluxDispatcher.unsubscribe("APP_STATE_UPDATE", setInvisible);
   }
 };
