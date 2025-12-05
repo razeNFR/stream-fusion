@@ -1,0 +1,44 @@
+{
+    "name": "SkyMoled v2",
+    "description": "Sky and Forest Background",
+    "version": "2.0",
+    "authors": [
+        {
+            "name": "razeN",
+            "id": "362746895585296130"
+        }
+    ],
+    "plus": {
+        "version": 0,
+        "mentionLineColor": "#FFFFFF"
+    },
+    "semanticColors": {
+        "ANDROID_RIPPLE": [
+            "#111111"
+        ],
+        "STATUS_POSITIVE_BACKGROUND": [
+            "#32CD32"
+        ]
+    },
+    "rawColors": {
+        "BLACK_500": "#00000050",
+        "PLUM_24": "#000000"
+		    },
+    "background": {
+        "url": "https://i.imgur.com/5NYThw2.jpeg",
+    "alpha": 1
+    },
+    "plus": {
+        "version": 0,
+        "icons": {
+            "ic_mic_neutral": "#111111",
+            "ic_mic_muted_neutral": "#111111",
+            "ic_soundboard":"#111111",
+            "ic_soundboard_muted": "#111111",
+            "ic_video": "#111111",
+            "ic_video_disabled": "#111111"
+        },
+        "iconpack":"md3legacy"
+    },
+    "spec": 2
+}
