@@ -5,7 +5,7 @@
     "authors": [
         {
             "name": "razeN",
-            "id": "362746895585296130"
+            "id": "362736895685296130"
         }
     ],
     "plus": {
@@ -16,6 +16,9 @@
         "ANDROID_RIPPLE": [
             "#111111"
         ],
+		"BG_SURFACE_OVERLAY_TMP": [
+            "#000000"
+        ],			
         "STATUS_POSITIVE_BACKGROUND": [
             "#32CD32"
         ]
@@ -38,7 +41,7 @@
             "ic_video": "#111111",
             "ic_video_disabled": "#111111"
         },
-        "iconpack":"md3legacy"
+        "iconpack":"iconsax"
     },
     "spec": 2
 }
