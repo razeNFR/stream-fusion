@@ -254,7 +254,7 @@
                         <!-- Enable StremThru Checkbox -->
                         <div class="relative flex gap-x-3">
                             <div class="flex h-6 items-center">
-                                <input id="stremthru_enabled" name="stremthru_enabled" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600" onchange="toggleStremThruFields()">
+                                <input id="stremthru_enabled" name="stremthru_enabled" type="checkbox" checked class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600" onchange="toggleStremThruFields()">
                             </div>
                             <div class="text-sm leading-6">
                                 <label for="stremthru_enabled" class="font-medium text-white">Enable StremThru</label>
@@ -288,52 +288,11 @@
                     </div>
 
                     <div class="mt-10 space-y-10">
-                        {% if jackett_enable %}
-                        <div class="relative flex gap-x-3">
-                            <div class="flex h-6 items-center">
-                                <input id="jackett" name="jackett" type="checkbox"
-                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                            </div>
-                            <div class="text-sm leading-6">
-                                <label for="jackett" class="font-medium text-white">Enable Jackett</label>
-                                <p class="text-gray-500 dark:text-gray-300">Use Jackett for more comprehensive results.
-                                </p>
-                            </div>
-                        </div>
-                        {% endif %}
-
-                        <div class="relative flex gap-x-3">
-                            <div class="flex h-6 items-center">
-                                <input id="cache" name="cache" type="checkbox" checked
-                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                                    onchange="updateProviderFields()">
-                            </div>
-                            <div class="text-sm leading-6">
-                                <label for="cache" class="font-medium text-white">Enable Public Caching</label>
-                                <p class="text-gray-500 dark:text-gray-300">Activate public caching for faster search
-                                    results.</p>
-                                <p class="text-gray-500 dark:text-gray-300"><span
-                                        class="font-bold text-red-600 dark:text-red-500">The cache server are the
-                                        historical one from
-                                        stremio-jackett app, only public torrent are cached on it</span></p>
-                            </div>
-                        </div>
-
-                        <div class="relative flex gap-x-3">
-                            <div class="flex h-6 items-center">
-                                <input id="zilean" name="zilean" type="checkbox" checked
-                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                            </div>
-                            <div class="text-sm leading-6">
-                                <label for="zilean" class="font-medium text-white">Enable Zilean API</label>
-                                <p class="text-gray-500 dark:text-gray-300">Use Zilean's API for DMM hashlist scraping
-                                    to find more results.</p>
-                            </div>
-                        </div>
+                        
 
 <div class="relative flex gap-x-3">
     <div class="flex h-6 items-center">
-        <input id="yggflix" name="yggflix" type="checkbox"
+        <input id="yggflix" name="yggflix" type="checkbox" checked
             class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
             onchange="updateProviderFields()">
     </div>
@@ -344,24 +303,7 @@
         </p>
     </div>
 </div>
-                        <div class="relative flex gap-x-3">
-                            <div class="flex h-6 items-center">
-                                <input id="sharewood" name="sharewood" type="checkbox"
-                                    data-unique-account="{{ sharewood_unique_account|lower }}"
-                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                                    onchange="updateProviderFields()">
-                            </div>
-                            <div class="text-sm leading-6">
-                                <label for="sharewood" class="font-medium text-white">Enable Sharewood API</label>
-                                <p class="text-gray-500 dark:text-gray-300">Use Sharewood API
-                                    to find more results.</p>
-                                <p class="text-gray-500 dark:text-gray-300"><span
-                                        class="font-bold text-red-600 dark:text-red-500">Warning: The Sharewood API are
-                                        not stable and very limited,
-                                        you may prefere to disable it to save time on search</span></p>
-                            </div>
-                        </div>
-
+                        
                         <div class="relative flex gap-x-3">
                             <div class="flex h-6 items-center">
                                 <input id="c411" name="c411" type="checkbox" checked
@@ -387,10 +329,8 @@
                                 <p class="text-gray-500 dark:text-gray-300">Use Torr9 Torznab API to find more results.</p>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-<div class="relative flex gap-x-3">
+						
+						<div class="relative flex gap-x-3">
     <div class="flex h-6 items-center">
         <input id="lacale" name="lacale" type="checkbox" checked
             data-unique-account="{{ lacale_unique_account|lower }}"
@@ -402,6 +342,11 @@
         <p class="text-gray-500 dark:text-gray-300">Use LaCale Torznab API to find more results.</p>
     </div>
 </div>
+						
+                    </div>
+                </div>
+
+
 
                 <div class="border-b border-gray-900/10 dark:border-white/50 pb-12">
                     <div class="flex flex-col items-center">
@@ -560,41 +505,6 @@
                     </div>
                 </div>
                 {% endif %}
-
-                <div class="border-b border-gray-900/10 dark:border-white/50 pb-12">
-                    <div class="flex flex-col items-center">
-                        <h2 class="text-white font-semibold leading-7">Catalogs Providers</h2>
-                        <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-400">Configure your catalogs
-                            preferences here.</p>
-                    </div>
-
-                    <div class="mt-10 space-y-10">
-                        <div class="relative flex gap-x-3">
-                            <div class="flex h-6 items-center">
-                                <input id="ctg_yggflix" name="ctg_yggflix" type="checkbox"
-                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                            </div>
-                            <div class="text-sm leading-6">
-                                <label for="ctg_yggflix" class="font-medium text-white">Enable Yggflix Catalogs</label>
-                                <p class="text-gray-500 dark:text-gray-300">Activate yggflix catalogs for discovers
-                                    contents.</p>
-                            </div>
-                        </div>
-
-                        <div class="relative flex gap-x-3">
-                            <div class="flex h-6 items-center">
-                                <input id="ctg_yggtorrent" name="ctg_yggtorrent" type="checkbox"
-                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                            </div>
-                            <div class="text-sm leading-6">
-                                <label for="ctg_yggtorrent" class="font-medium text-white">Enable Yggtorrent
-                                    Catalogs</label>
-                                <p class="text-gray-500 dark:text-gray-300">Activate yggtorrent catalogs for discovers
-                                    contents.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
                 <div class="border-b border-gray-900/10 dark:border-white/50 pb-12">
                     <div class="flex flex-col items-center">
