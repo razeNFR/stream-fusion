@@ -686,9 +686,9 @@ function loadData() {
 
     const defaultConfig = {
         jackett: false,
-        cache: true,
+        cache: false,
         cacheUrl: 'https://stremio-jackett-cacher.elfhosted.com/',
-        zilean: true,
+        zilean: false,
         yggflix: true,
         sharewood: false,
         maxSize: '150',
