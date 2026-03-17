@@ -691,12 +691,12 @@ function loadData() {
         zilean: false,
         yggflix: true,
         sharewood: false,
-        maxSize: '150',
+        maxSize: '5000',
         resultsPerQuality: '10',
         maxResults: '30',
         minCachedResults: '10',
         torrenting: false,
-        ctg_yggtorrent: true,
+        ctg_yggtorrent: false,
         ctg_yggflix: false,
         metadataProvider: 'tmdb',
         sort: 'quality',
@@ -711,7 +711,7 @@ function loadData() {
         debrid_order: false,
         c411: true,
         torr9: true,
-        lacale: true
+        lacale: false
     };
 
     Object.keys(defaultConfig).forEach(key => {
