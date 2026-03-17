@@ -31,16 +31,23 @@
 </head>
 
 <body class="h-full bg-fixed bg-cover bg-center bg-no-repeat"
-    style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/static/stremio-bg.jpg');">
+    style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.wallpapersden.com/image/download/4k-artistic-landscape_bWpoZWiUmZqaraWkpJRobWllrWdma2U.jpg');">
     <div class="container mx-auto px-4 min-h-screen flex items-center justify-center">
         <form
-            class="bg-white bg-opacity-80 dark:bg-gray-900 dark:bg-opacity-90 rounded-lg shadow-xl p-8 max-w-2xl mx-auto">
+            class="bg-white bg-opacity-80 dark:bg-gray-900 dark:bg-opacity-25 rounded-lg shadow-xl p-8 max-w-2xl mx-auto">
             <div class="flex justify-center mb-8">
                 <img src="https://i.ibb.co/ZRZcVBLd/SF-modern.png" alt="logo" class="w-[150px] h-[150px]">
             </div>
 			 <h1 class="text-base font-semibold leading-7 text-gray-900 dark:text-white"
                     style="text-align: center;font-size: 1.3rem;">
                     Stream-Fusion</h1>
+					<p class="text-center text-sm text-gray-400 mt-1">
+    💬 Support & questions : 
+    <a href="https://discord.gg/KN3vRqTHDa" target="_blank" 
+       class="text-indigo-400 hover:text-indigo-300 font-medium transition-colors duration-150">
+        Rejoindre le Discord
+    </a>
+</p>
             <div class="space-y-6">
                     <div class="border-b border-gray-900/10 dark:border-white/50 pb-12">
                         <div class="mt-10 flex justify-center">
@@ -75,7 +82,7 @@
                             </div>
 							
                             <div class="text-sm leading-6">
-                                <label for="debrid_rd" class="font-medium text-white">Utiliser Real-Debrid</label>
+                                <label for="debrid_rd" class="font-medium text-white" style="display: inline-flex; align-items: center; color: white; font-weight: 500; cursor: pointer;"><img src="https://i.ibb.co/LzLYnqHw/real-debrid.png" alt="" style="width: 20px; height: 20px; margin-right: 8px;">Utiliser Real-Debrid</label>
                             </div>
                             <!-- RealDebrid Token Info -->
                             <div id="rd_token_info_div" class="mt-4 space-y-3" style="display: none;">
@@ -101,7 +108,7 @@
                                     onchange="updateProviderFields()">
                             </div>
                             <div class="text-sm leading-6">
-                                <label for="debrid_ad" class="font-medium text-white">Utiliser AllDebrid</label>
+                                <label for="debrid_ad" class="font-medium text-white" style="display: inline-flex; align-items: center; color: white; font-weight: 500; cursor: pointer;"><img src="https://i.ibb.co/ksbZQm2G/alldebrid.png" alt="" style="width: 20px; height: 20px; margin-right: 8px;">Utiliser AllDebrid</label>
                             </div>
                             <!-- AllDebrid Token Info -->
                             <div id="ad_token_info_div" class="mt-4 space-y-3" style="display: none;">
@@ -127,7 +134,7 @@
                                     onchange="updateProviderFields()">
                             </div>
                             <div class="text-sm leading-6">
-                                <label for="debrid_pm" class="font-medium text-white">Utiliser Premiumize</label>
+                                <label for="debrid_pm" class="font-medium text-white" style="display: inline-flex; align-items: center; color: white; font-weight: 500; cursor: pointer;"><img src="https://i.ibb.co/mrLM7wry/premiumize.png" alt="" style="width: 20px; height: 20px; margin-right: 8px;">Utiliser Premiumize</label>
                             </div>
                             <!-- Premiumize Token Info -->
                             <div id="pm_token_info_div" class="mt-2" style="display: none;">
@@ -149,7 +156,7 @@
                                     onchange="updateProviderFields()">
                             </div>
                             <div class="text-sm leading-6">
-                                <label for="debrid_tb" class="font-medium text-white">Utiliser TorBox</label>
+                                <label for="debrid_tb" class="font-medium text-white" style="display: inline-flex; align-items: center; color: white; font-weight: 500; cursor: pointer;"><img src="https://i.ibb.co/PszKdNhB/torbox.png" alt="" style="width: 20px; height: 20px; margin-right: 8px;">Utiliser TorBox</label>
                             </div>
                             <!-- TorBox Token Info -->
                             <div id="tb_token_info_div" class="mt-2" style="display: none;">
@@ -168,7 +175,7 @@
                                     onchange="updateProviderFields()">
                             </div>
                             <div class="text-sm leading-6">
-                                <label for="debrid_dl" class="font-medium text-white">Utiliser Debrid-Link</label>
+                                <label for="debrid_dl" class="font-medium text-white" style="display: inline-flex; align-items: center; color: white; font-weight: 500; cursor: pointer;"><img src="https://i.ibb.co/MySgZVLn/debridlink.png" alt="" style="width: 20px; height: 20px; margin-right: 8px;">Utiliser Debrid-Link</label>
                             </div>
                         </div>
                         <div id="debridlink_api_key_div" class="mt-2 hidden">
@@ -185,7 +192,7 @@
                                     onchange="updateProviderFields()">
                             </div>
                             <div class="text-sm leading-6">
-                                <label for="debrid_ed" class="font-medium text-white">Utiliser EasyDebrid</label>
+                                <label for="debrid_ed" class="font-medium text-white" style="display: inline-flex; align-items: center; color: white; font-weight: 500; cursor: pointer;"><img src="https://i.ibb.co/pjnd7Wsr/easydebrid.png" alt="" style="width: 20px; height: 20px; margin-right: 8px;">Utiliser EasyDebrid</label>
                             </div>
                         </div>
                         <div id="easydebrid_api_key_div" class="mt-2 hidden">
@@ -202,7 +209,7 @@
                                     onchange="updateProviderFields()">
                             </div>
                             <div class="text-sm leading-6">
-                                <label for="debrid_oc" class="font-medium text-white">Utiliser Offcloud</label>
+                                <label for="debrid_oc" class="font-medium text-white" style="display: inline-flex; align-items: center; color: white; font-weight: 500; cursor: pointer;"><img src="https://i.ibb.co/tw6FfbDp/offcloud.png" alt="" style="width: 20px; height: 20px; margin-right: 8px;">Utiliser Offcloud</label>
                             </div>
                         </div>
                         <div id="offcloud_credentials_div" class="mt-2 hidden">
@@ -219,7 +226,7 @@
                                     onchange="updateProviderFields()">
                             </div>
                             <div class="text-sm leading-6">
-                                <label for="debrid_pk" class="font-medium text-white">Utiliser PikPak</label>
+                                <label for="debrid_pk" class="font-medium text-white" style="display: inline-flex; align-items: center; color: white; font-weight: 500; cursor: pointer;"><img src="https://i.ibb.co/21xxQFHZ/pikpak.png" alt="" style="width: 20px; height: 20px; margin-right: 8px;">Utiliser PikPak</label>
                             </div>
                         </div>
                         <div id="pikpak_credentials_div" class="mt-2 hidden">
@@ -272,8 +279,7 @@
                 <div class="border-b border-gray-900/10 dark:border-white/50 pb-12">
                     <div class="flex flex-col items-center">
                         <h2 class="text-white font-semibold leading-7">📡 Fournisseurs de torrents</h2>
-                        <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-400">Configure your torrent provider
-                            settings here.</p>
+                        <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-400">Configurez ici les paramètres de votre fournisseur de torrents.</p>
                     </div>
 
                     <div class="mt-10 space-y-10">
@@ -329,7 +335,7 @@
             onchange="updateProviderFields()">
     </div>
     <div class="text-sm leading-6">
-        <label for="yggflix" class="font-medium text-white">Utiliser YGG Relay</label>
+        <label for="yggflix" class="font-medium text-white" style="display: inline-flex; align-items: center; color: white; font-weight: 500; cursor: pointer;"><img src="https://i.ibb.co/xqLv40hB/ygglogobig.png" alt="" style="width: 32px; height: 16px; margin-right: 8px;">Utiliser YGG Relay</label>
         <p class="text-gray-500 dark:text-gray-300">
             Utilisez le relais public YGG Torznab pour trouver plus de résultats..
         </p>
@@ -362,7 +368,7 @@
                                     onchange="updateProviderFields()">
                             </div>
                             <div class="text-sm leading-6">
-                                <label for="c411" class="font-medium text-white">Utiliser C411 API</label>
+                                <label for="c411" class="font-medium text-white" style="display: inline-flex; align-items: center; color: white; font-weight: 500; cursor: pointer;"><img src="https://i.ibb.co/W4DygFGm/c411.png" alt="" style="width: 32px; height: 16px; margin-right: 8px;">Utiliser C411 API</label>
                                 <p class="text-gray-500 dark:text-gray-300">Utilisez l'API C411 Torznab pour trouver plus de résultats.</p>
                             </div>
                         </div>
@@ -394,7 +400,7 @@
                                     onchange="updateProviderFields()">
                             </div>
                             <div class="text-sm leading-6">
-                                <label for="torr9" class="font-medium text-white">Utiliser Torr9 API</label>
+                                <label for="torr9" class="font-medium text-white" style="display: inline-flex; align-items: center; color: white; font-weight: 500; cursor: pointer;"><img src="https://i.ibb.co/7Nxg9xz7/torr9logo.png" alt="" style="width: 24px; height: 24px; margin-right: 8px;">Utiliser Torr9 API</label>
                                 <p class="text-gray-500 dark:text-gray-300">Utilisez l'API Torr9 Torznab pour trouver plus de résultats.</p>
                             </div>
                         </div>
@@ -426,7 +432,7 @@
             onchange="updateProviderFields()">
     </div>
     <div class="text-sm leading-6">
-        <label for="lacale" class="font-medium text-white">Utiliser La-Cale API</label>
+        <label for="lacale" class="font-medium text-white" style="display: inline-flex; align-items: center; color: white; font-weight: 500; cursor: pointer;"><img src="https://i.ibb.co/ksw8TZw6/lacale.png" alt="" style="width: 28px; height: 28px; margin-right: 8px;">Utiliser La-Cale API</label>
         <p class="text-gray-500 dark:text-gray-300">Utilisez l'API LaCale Torznab pour trouver plus de résultats.</p>
     </div>
 </div>
@@ -719,13 +725,12 @@
 
                 <div class="border-b border-gray-900/10 dark:border-white/50 pb-12">
                     <div class="flex flex-col items-center">
-                        <h2 class="text-white font-semibold leading-7">🛠️ Filtrage et tri</h2>
-                        <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-400">Configurez ici vos paramètres de filtrage et vos préférences de tri.</p>
+                        <h2 class="text-white font-semibold leading-7">📊 Options de tri</h2>
+                        <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-400">Choisissez l'ordre de tri des résultats.</p>
                     </div>
                     <div class="mt-10 space-y-10">
                         <fieldset>
-                            <legend class="text-sm font-semibold leading-6 text-white">📊 Options de tri</legend>
-                            <div class="mt-6 space-y-6">
+                            <div class="mt-0 space-y-6">
                                 <div class="flex items-center gap-x-3">
                                     <input id="quality" name="sorting" type="radio"  checked
                                         class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
@@ -749,9 +754,12 @@
                                 </div>
                             </div>
                         </fieldset>
+						<hr class="border-gray-900/10 dark:border-white/50">
                         <fieldset>
-                            <legend class="text-sm font-semibold leading-6 text-white">🖥️ Exclusion de qualité</legend>
-                            <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-400">Cochez les qualités que vous souhaitez exclure</p>
+						                    <div class="flex flex-col items-center">
+                        <h2 class="text-white font-semibold leading-7">🖥️ Exclusion de qualité</h2>
+                        <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-400">Cochez les qualités que vous souhaitez exclure</p>
+                    </div>
                             <div class="mt-6 space-y-6">
                                 <div class="flex items-center gap-x-3">
                                     <input id="cam" name="cam" type="checkbox" checked
@@ -782,9 +790,12 @@
                                 </div>
                             </div>
                         </fieldset>
+						<hr class="border-gray-900/10 dark:border-white/50">
                         <fieldset>
-                            <legend class="text-sm font-semibold leading-6 text-white">📺 Exclusion de résolution</legend>
-                            <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-400">Cochez les résolution que vous souhaitez exclure</p>
+												                    <div class="flex flex-col items-center">
+                        <h2 class="text-white font-semibold leading-7">📺 Exclusion de résolution</h2>
+                        <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-400">Cochez les résolution que vous souhaitez exclure</p>
+                    </div>
                             <div class="mt-6 space-y-6">
                                 <div class="flex items-center gap-x-3">
                                     <input id="2160p" name="2160p" type="checkbox"
@@ -813,9 +824,13 @@
                                 </div>
                             </div>
                         </fieldset>
+<hr class="border-gray-900/10 dark:border-white/50">
 
+												                    <div class="flex flex-col items-center">
+                        <h2 class="text-white font-semibold leading-7">🌍 Choisissez vos langages</h2>
+                        <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-400">Choisissez les langues et les mots-clés que vous souhaitez inclure ou exclure</p>
+                    </div>
                         <div>
-                            <label class="block text-sm font-medium leading-6 text-white">🌍 Choisissez vos langues</label>
                             <div class="mt-2">
                                 <div id="languageCheckBoxes" class="flex flex-wrap gap-4">
                                     <label class="inline-flex items-center">
@@ -891,10 +906,10 @@
                         <div class="border-b border-gray-900/10 dark:border-white/50 pb-12">
                             <h2 class="text-white font-semibold leading-7">Mots-clés à exclure</h2>
                             <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-400">Liste de mots-clés séparés par des virgules à exclure du titre.</p>
-                            <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                            <div class="mt-2 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                                 <div class="sm:col-span-4">
                                     <label for="exclusion-keywords"
-                                        class="block text-sm font-medium leading-6 text-white">Mots-clés</label>
+                                        class="block text-sm font-medium leading-6 text-white">Mots-clés :</label>
                                     <input type="text" name="exclusion-keywords" id="exclusion-keywords"
                                         class="mt-2 block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                         placeholder="mots-clés1, mots-clés2, mots-clés3">
@@ -902,6 +917,10 @@
                             </div>
                         </div>
 
+												                    <div class="flex flex-col items-center">
+                        <h2 class="text-white font-semibold leading-7">📦 Filtrer le nombre de résultats</h2>
+                        <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-400">Choisissez la taille maximal en Go et les résultats maximum autorisé</p>
+                    </div>
 
                         <div>
                             <label for="maxSize" class="block text-sm font-medium leading-6 text-white">Taille maximale du fichier (Go)</label>
@@ -929,6 +948,10 @@
                         </div>
                     </div>
                 </div>
+
+<div class="flex flex-col items-center">
+                        <h2 class="text-white font-semibold leading-7">📥 Installez ou copiez le manifest</h2>
+                    </div>
 
                 <div class="mt-6 flex items-center justify-center gap-x-6">
                     <a id="install" onclick="return getLink('link');"
