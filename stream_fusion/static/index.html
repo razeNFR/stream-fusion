@@ -62,9 +62,8 @@
 
                 <div class="border-b border-gray-900/10 dark:border-white/50 pb-12">
                     <div class="flex flex-col items-center">
-                        <h2 class="text-white font-semibold leading-7">Streaming Settings</h2>
-                        <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-400">Configure your streaming
-                            preferences here.</p>
+                        <h2 class="text-white font-semibold leading-7">⚡ Service de Débridage</h2>
+                        <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-400">Choisissez votre service de débridage</p>
                     </div>
 
                     <div class="mt-10 space-y-10">
@@ -247,7 +246,7 @@
                 <!-- StremThru Section -->
                 <div class="border-b border-gray-900/10 dark:border-white/50 pb-12">
                     <div class="flex flex-col items-center">
-                        <h2 class="text-white font-semibold leading-7">StremThru Settings</h2>
+                        <h2 class="text-white font-semibold leading-7">🌀 Paramètre StremThru</h2>
                         <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-400">Configure StremThru as an optional interface.</p>
                     </div>
                     <div class="mt-10 space-y-10">
@@ -282,16 +281,17 @@
 
                 <div class="border-b border-gray-900/10 dark:border-white/50 pb-12">
                     <div class="flex flex-col items-center">
-                        <h2 class="text-white font-semibold leading-7">Torrent Providers</h2>
+                        <h2 class="text-white font-semibold leading-7">📡 Torrent Providers</h2>
                         <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-400">Configure your torrent provider
                             settings here.</p>
                     </div>
 
                     <div class="mt-10 space-y-10">
+					<div style="display: none;">
                         {% if jackett_enable %}
                         <div class="relative flex gap-x-3">
                             <div class="flex h-6 items-center">
-                                <input id="jackett" name="jackett" type="checkbox" disabled
+                                <input id="jackett" name="jackett" type="checkbox"
                                     class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                             </div>
                             <div class="text-sm leading-6">
@@ -304,7 +304,7 @@
 
                         <div class="relative flex gap-x-3">
                             <div class="flex h-6 items-center">
-                                <input id="cache" name="cache" type="checkbox" disabled
+                                <input id="cache" name="cache" type="checkbox" checked
                                     class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
                                     onchange="updateProviderFields()">
                             </div>
@@ -321,7 +321,7 @@
 
                         <div class="relative flex gap-x-3">
                             <div class="flex h-6 items-center">
-                                <input id="zilean" name="zilean" type="checkbox"  disabled
+                                <input id="zilean" name="zilean" type="checkbox" checked
                                     class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                             </div>
                             <div class="text-sm leading-6">
@@ -329,8 +329,9 @@
                                 <p class="text-gray-500 dark:text-gray-300">Use Zilean's API for DMM hashlist scraping
                                     to find more results.</p>
                             </div>
+							
                         </div>
-
+</div>
 <div class="relative flex gap-x-3">
     <div class="flex h-6 items-center">
         <input id="yggflix" name="yggflix" type="checkbox" checked
@@ -344,9 +345,10 @@
         </p>
     </div>
 </div>
+<div style="display: none;">
                         <div class="relative flex gap-x-3">
                             <div class="flex h-6 items-center">
-                                <input id="sharewood" name="sharewood" type="checkbox" disabled
+                                <input id="sharewood" name="sharewood" type="checkbox"
                                     data-unique-account="{{ sharewood_unique_account|lower }}"
                                     class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
                                     onchange="updateProviderFields()">
@@ -361,7 +363,7 @@
                                         you may prefere to disable it to save time on search</span></p>
                             </div>
                         </div>
-
+</div>
                         <div class="relative flex gap-x-3">
                             <div class="flex h-6 items-center">
                                 <input id="c411" name="c411" type="checkbox" checked
@@ -387,10 +389,8 @@
                                 <p class="text-gray-500 dark:text-gray-300">Use Torr9 Torznab API to find more results.</p>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-<div class="relative flex gap-x-3">
+						
+						<div class="relative flex gap-x-3">
     <div class="flex h-6 items-center">
         <input id="lacale" name="lacale" type="checkbox" checked
             data-unique-account="{{ lacale_unique_account|lower }}"
@@ -402,10 +402,15 @@
         <p class="text-gray-500 dark:text-gray-300">Use LaCale Torznab API to find more results.</p>
     </div>
 </div>
+						
+                    </div>
+                </div>
+
+
 
                 <div class="border-b border-gray-900/10 dark:border-white/50 pb-12">
                     <div class="flex flex-col items-center">
-                        <h2 class="text-white font-semibold leading-7">Debrid Custom Config</h2>
+                        <h2 class="text-white font-semibold leading-7">🧩 Debrid Custom Config</h2>
                         <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-400">Customize your debrid service
                             settings here.</p>
                     </div>
@@ -561,6 +566,7 @@
                 </div>
                 {% endif %}
 
+<div style="display: none;">
                 <div class="border-b border-gray-900/10 dark:border-white/50 pb-12">
                     <div class="flex flex-col items-center">
                         <h2 class="text-white font-semibold leading-7">Catalogs Providers</h2>
@@ -571,7 +577,7 @@
                     <div class="mt-10 space-y-10">
                         <div class="relative flex gap-x-3">
                             <div class="flex h-6 items-center">
-                                <input id="ctg_yggflix" name="ctg_yggflix" type="checkbox" disabled
+                                <input id="ctg_yggflix" name="ctg_yggflix" type="checkbox"
                                     class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                             </div>
                             <div class="text-sm leading-6">
@@ -583,7 +589,7 @@
 
                         <div class="relative flex gap-x-3">
                             <div class="flex h-6 items-center">
-                                <input id="ctg_yggtorrent" name="ctg_yggtorrent" type="checkbox" disabled
+                                <input id="ctg_yggtorrent" name="ctg_yggtorrent" type="checkbox"
                                     class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                             </div>
                             <div class="text-sm leading-6">
@@ -595,10 +601,10 @@
                         </div>
                     </div>
                 </div>
-
+</div>
                 <div class="border-b border-gray-900/10 dark:border-white/50 pb-12">
                     <div class="flex flex-col items-center">
-                        <h2 class="text-white font-semibold leading-7">Metadata Provider</h2>
+                        <h2 class="text-white font-semibold leading-7">🗃️ Metadata Provider</h2>
                         <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-400">Configure your metadata provider
                             settings here.</p>
                     </div>
@@ -728,7 +734,7 @@
 
                 <div class="border-b border-gray-900/10 dark:border-white/50 pb-12">
                     <div class="flex flex-col items-center">
-                        <h2 class="text-white font-semibold leading-7">Filtering and Sorting</h2>
+                        <h2 class="text-white font-semibold leading-7">🛠️ Filtering and Sorting</h2>
                         <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-400">Set up your filtering parameters
                             and sorting preferences here.</p>
                     </div>
