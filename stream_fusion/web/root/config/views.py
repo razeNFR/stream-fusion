@@ -35,6 +35,9 @@ async def configure(request: Request):
         "ygg_unique_account": settings.ygg_unique_account,
         "jackett_enable": settings.jackett_enable,
         "tb_unique_account": settings.tb_unique_account,
+        "c411_unique_account": settings.c411_unique_account,
+        "torr9_unique_account": settings.torr9_unique_account,
+        "lacale_unique_account": settings.lacale_unique_account,
     })
 
 
@@ -60,7 +63,7 @@ async def get_manifest():
             }
         ],
         types=["movie", "series"],
-        name="razeNio" + (" (dev)" if settings.develop else ""),
+        name="StreamFusion" + (" (dev)" if settings.develop else ""),
         description="StreamFusion enhances Stremio by integrating torrent indexers and debrid services, "
                     "providing access to a vast array of cached torrent sources. This plugin seamlessly bridges "
                     "Stremio with popular indexers and debrid platforms, offering users an expanded content "
@@ -163,7 +166,7 @@ async def get_manifest(config: str, apikey_dao: APIKeyDAO = Depends()):
             }
         ],
         types=["movie", "series"],
-        name="razeNio" + (" (dev)" if settings.develop else ""),
+        name="StreamFusion" + (" (dev)" if settings.develop else ""),
         description="StreamFusion enhances Stremio by integrating torrent indexers and debrid services,"
          " providing access to a vast array of cached torrent sources. This plugin seamlessly bridges"
          " Stremio with popular indexers and debrid platforms, offering users an expanded content"
