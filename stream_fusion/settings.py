@@ -24,6 +24,10 @@ class DebridService(str, enum.Enum):
     AD = "AllDebrid"
     TB = "TorBox"
     PM = "Premiumize"
+    DL = "Debrid-Link"
+    ED = "EasyDebrid"
+    OC = "Offcloud"
+    PP = "PikPak"
 
 
 class NoCacheVideoLanguages(str, enum.Enum):
@@ -41,9 +45,9 @@ class NoCacheVideoLanguages(str, enum.Enum):
 def get_default_worker_count():
     """
     Calculate the default number of workers based on CPU cores.
-    Returns the number of CPU cores multiplied by 2, with a minimum of 2 and a maximum of 6.
+    Returns the number of CPU cores multiplied by 2, with a minimum of 2 and a maximum of 10.
     """
-    return min(max(multiprocessing.cpu_count() * 2, 2), 6)
+    return min(max(multiprocessing.cpu_count() * 2, 2), 8)
 
 
 def check_env_variable(var_name):
@@ -109,6 +113,9 @@ class Settings(BaseSettings):
     pm_token: str | None = None
     pm_unique_account: bool = check_env_variable("PM_TOKEN")
     pm_base_url: str = "https://www.premiumize.me/api"
+    
+    # STREMTHRU
+    stremthru_url: str = "https://stremthru.13377001.xyz"
 
     # LOGGING
     log_level: LogLevel = LogLevel.INFO
@@ -128,12 +135,14 @@ class Settings(BaseSettings):
     pg_pass: str = "streamfusion"  # "stremio"
     pg_base: str = "streamfusion"
     pg_echo: bool = False
+    pg_pool_size: int = 100
+    pg_max_overflow: int = 50
 
     # REDIS
     redis_host: str = "redis"
     redis_port: int = 6379
     redis_db: int = 5
-    redis_expiration: int = 604800
+    redis_expiration: int = 604800  # 7 jours
     redis_password: str | None = None
 
     # TMDB
@@ -149,23 +158,55 @@ class Settings(BaseSettings):
     # ZILEAN DMM API
     zilean_host: str = "zilean"
     zilean_port: int = 8181
+    
+    # DEBRIDLINK
+    dl_token: str | None = None
+    dl_unique_account: bool = check_env_variable("DL_TOKEN")
+    
+    # EASYDEBRID
+    ed_token: str | None = None
+    ed_unique_account: bool = check_env_variable("ED_TOKEN")
+    
+    # OFFCLOUD
+    oc_credentials: str | None = None
+    oc_unique_account: bool = check_env_variable("OC_CREDENTIALS")
+    
+    # PIKPAK
+    pp_credentials: str | None = None
+    pp_unique_account: bool = check_env_variable("PP_CREDENTIALS")
     zilean_schema: str = "http"
     zilean_max_workers: int = 4
     zilean_pool_connections: int = 10
     zilean_api_pool_maxsize: int = 10
     zilean_max_retry: int = 3
 
-    # YGGFLIX
-    yggflix_url: str = "https://yggflix.fr"
+    # YGG RELAY / YGGFLIX
+    yggflix_url: str = "https://relay.ygg.gratis/torznab"
     yggflix_max_workers: int = 4
     ygg_passkey: str | None = None
-    ygg_unique_account: bool = check_env_variable("YGG_PASSKEY")
+    ygg_unique_account: bool = False
 
     # SHAREWOOD
     sharewood_url: str = "https://www.sharewood.tv"
     sharewood_max_workers: int = 4
     sharewood_passkey: str | None = None
     sharewood_unique_account: bool = check_env_variable("SHAREWOOD_PASSKEY")
+
+    # C411 TORZNAB
+    c411_url: str = "https://c411.org"
+    c411_api_key: str | None = None  # Env: C411_API_KEY — Torznab access key
+    c411_passkey: str | None = None  # Env: C411_PASSKEY — full tracker announce URL
+    c411_unique_account: bool = check_env_variable("C411_API_KEY")
+
+    # TORR9 TORZNAB
+    torr9_url: str = "https://api.torr9.xyz"
+    torr9_api_key: str | None = None  # Env: TORR9_API_KEY
+    torr9_unique_account: bool = check_env_variable("TORR9_API_KEY")
+
+    # LACALE TORZNAB
+    lacale_url: str = "https://la-cale.space/api/external/torznab"
+    lacale_api_key: str | None = None  # Env: LACALE_API_KEY
+    lacale_unique_account: bool = check_env_variable("LACALE_API_KEY")
 
     # PUBLIC_CACHE
     public_cache_url: str = "https://stremio-jackett-cacher.elfhosted.com/"
@@ -259,6 +300,20 @@ class Settings(BaseSettings):
         Get the URL for the no-cache video based on the selected language.
         """
         return self.no_cache_video_language.value
+
+    @property
+    def banned_video_url(self) -> str:
+        """
+        Get the URL for the banned video when torrent is unavailable for legal reasons.
+        """
+        return "https://raw.githubusercontent.com/Telkaoss/stream-fusion/refs/heads/master/stream_fusion/static/videos/banned_error.mp4"
+
+    @property
+    def slots_full_video_url(self) -> str:
+        """
+        Get the URL for the slots full video when TorBox slots are full.
+        """
+        return "https://raw.githubusercontent.com/Telkaoss/stream-fusion/refs/heads/master/stream_fusion/static/videos/slots_full.mp4"
 
 
 try:
