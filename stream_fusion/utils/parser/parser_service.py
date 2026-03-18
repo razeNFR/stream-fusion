@@ -19,6 +19,12 @@ from stream_fusion.utils.parser.parser_utils import (
     DIRECT_TORRENT,
 )
 
+INDEXER_DISPLAY_NAMES = {
+    "Yggtorrent - API": "🏔 Ygg",
+    "C411 - API": "🕍 C411",
+    "Torr9 - API": "🚀 Torr9",
+    "LaCale - API": "⚓️ La-Cale",
+}
 
 class StreamParser:
     def __init__(self, config: Dict):
@@ -202,8 +208,9 @@ class StreamParser:
         return f"{info}\n"
 
     def _add_torrent_info(self, torrent_item: TorrentItem) -> str:
-        size_in_gb = round(int(torrent_item.size) / 1024 / 1024 / 1024, 2)
-        return f"⚙️ {torrent_item.indexer} 💾 {size_in_gb}GB 👥 {torrent_item.seeders} \n"
+    size_in_gb = round(int(torrent_item.size) / 1024 / 1024 / 1024, 2)
+    display_name = INDEXER_DISPLAY_NAMES.get(torrent_item.indexer, torrent_item.indexer)
+    return f"{display_name} 💾 {size_in_gb}GB 👥 {torrent_item.seeders} \n"
 
     def _add_media_info(self, parsed_data: ParsedData) -> str:
         info = []
