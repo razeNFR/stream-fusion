@@ -193,24 +193,24 @@ class StreamParser:
 
         lang_type = detect_french_language(torrent_item.raw_title)
         if lang_type:
-            info += f"  ✔ {lang_type} "
+            info += f"  💬 {lang_type} "
 
         group = extract_release_group(torrent_item.raw_title) or parsed_data.group
         if group:
-            info += f"  ☠️ {group}"
+            info += f"  👨‍👩‍👧‍👦 {group}"
 
         return f"{info}\n"
 
     def _add_torrent_info(self, torrent_item: TorrentItem) -> str:
         size_in_gb = round(int(torrent_item.size) / 1024 / 1024 / 1024, 2)
-        return f"🔍 {torrent_item.indexer} 💾 {size_in_gb}GB 👥 {torrent_item.seeders} \n"
+        return f"⚙️ {torrent_item.indexer} 💾 {size_in_gb}GB 👥 {torrent_item.seeders} \n"
 
     def _add_media_info(self, parsed_data: ParsedData) -> str:
         info = []
         if parsed_data.codec:
-            info.append(f"🎥 {parsed_data.codec}")
+            info.append(f"🎬 {parsed_data.codec}")
         if parsed_data.quality:
-            info.append(f"📺 {parsed_data.quality}")
+            info.append(f"📀 {parsed_data.quality}")
         # Ajouter les informations HDR/Dolby Vision/SDR
         if parsed_data.hdr:
             hdr_info = ' '.join(parsed_data.hdr)
@@ -219,7 +219,7 @@ class StreamParser:
             # Si c'est du 4K sans HDR, c'est du SDR
             info.append("🌈 SDR")
         if parsed_data.audio:
-            info.append(f"🎧 {' '.join(parsed_data.audio)}")
+            info.append(f"🔊 {' '.join(parsed_data.audio)}")
         return " ".join(info) + "\n" if info else ""
 
     def _create_direct_torrent_stream(
