@@ -129,12 +129,12 @@ async def get_manifest(config: str, apikey_dao: APIKeyDAO = Depends()):
             {
                 "type": "movie",
                 "id": "latest_movies",
-                "name": "Yggflix"
+                "name": "StreamFusion - Films Récents"
             },
             {
                 "type": "series",
                 "id": "latest_tv_shows",
-                "name": "Yggflix"
+                "name": "StreamFusion - Séries Récentes"
             }
         ])
 
@@ -155,7 +155,7 @@ async def get_manifest(config: str, apikey_dao: APIKeyDAO = Depends()):
     logger.info("Serving manifest.json")
     return ManifestResponse(
         id="community.limedrive.streamfusion",
-        icon="https://i.imgur.com/q2VSdSp.png",
+        icon="https://i.ibb.co/j95NwZjC/SF-modern.png",
         version=str(get_version()),
         resources=[
             'catalog',
@@ -167,9 +167,9 @@ async def get_manifest(config: str, apikey_dao: APIKeyDAO = Depends()):
         ],
         types=["movie", "series"],
         name="StreamFusion" + (" (dev)" if settings.develop else ""),
-        description="StreamFusion enhances Stremio by integrating torrent indexers and debrid services,"
-         " providing access to a vast array of cached torrent sources. This plugin seamlessly bridges"
-         " Stremio with popular indexers and debrid platforms, offering users an expanded content"
-         " library and a smooth streaming experience.",
+        description="StreamFusion améliore Stremio en intégrant des indexeurs de torrents et des services de débridage,"
+         " Ce plugin offre un accès à une vaste gamme de sources torrent mises en cache. Il connecte"
+         " Stremio de manière transparente aux indexeurs et plateformes de débridage populaires, offrant ainsi aux utilisateurs"
+         " une bibliothèque de contenu étendue et une expérience de streaming fluide.",
         catalogs=catalogs,
     )
