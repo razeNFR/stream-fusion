@@ -72,22 +72,22 @@ async def get_manifest():
             {
                 "type": "movie",
                 "id": "latest_movies",
-                "name": "Yggflix - Films Récents"
+                "name": "StreamFusion - Films Récents"
             },
             {
                 "type": "movie",
                 "id": "recently_added_movies",
-                "name": "YGGtorrent - Films Récemment Ajoutés"
+                "name": "StreamFusion - Films Récemment Ajoutés"
             },
             {
                 "type": "series",
                 "id": "latest_tv_shows",
-                "name": "Yggflix - Séries Récentes"
+                "name": "StreamFusion - Séries Récentes"
             },
             {
                 "type": "series",
                 "id": "recently_added_tv_shows",
-                "name": "YGGtorrent - Séries Récemment Ajoutées"
+                "name": "StreamFusion - Séries Récemment Ajoutées"
             }
         ],
         behaviorHints={
